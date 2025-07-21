@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "maple",
   "name": "Space Documentation",
   "colors": {
     "primary": "#7A65FD",
@@ -20,6 +20,7 @@
           {
             "group": "Guides",
             "pages": [
+              "guides/first-steps-with-space",
               "guides/start-with-planning",
               "guides/scheduling-tasks",
               "guides/organise-your-way",
@@ -38,8 +39,14 @@
                   "documentation/scheduling-tasks/on-your-calendar"
                 ]
               },
-              "documentation/planning-your-year-and-quarter",
-              "documentation/planning-your-week-and-day",
+              {
+                "group": "Planning",
+                "pages": [
+                  "documentation/planning/overview",
+                  "documentation/planning-your-year-and-quarter",
+                  "documentation/planning-your-week-and-day"
+                ]
+              },
               "documentation/projects-and-areas",
               "documentation/notes-and-focus-mode",
               "documentation/keyboard-shortcuts"
@@ -83,6 +90,9 @@
       "label": "Dashboard",
       "href": "https://dashboard.mintlify.com"
     }
+  },
+  "banner": {
+    "content": "Like Space, these docs are in beta. If you need help, shoot me an [email](mailto:bastiaan@findspace.app)"
   },
   "footer": {
     "links": [
