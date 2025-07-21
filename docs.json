@@ -1,61 +1,68 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Space Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7A65FD",
+    "light": "#7A65FD",
+    "dark": "#745DFF"
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
         "groups": [
           {
             "group": "Start here",
             "pages": [
               "index",
-              "guides/quickstart"
+              "why-space"
             ]
           },
           {
             "group": "Guides",
             "pages": [
-              "guides/quickstart"
               "guides/start-with-planning",
-              "guides/keyboard-shortcuts"
+              "guides/scheduling-tasks",
+              "guides/organise-your-way",
+              "guides/getting-productive"
             ]
           },
           {
             "group": "Documentation",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "documentation/adding-and-editing-tasks",
+              {
+                "group": "Scheduling Tasks",
+                "pages": [
+                  "documentation/scheduling-tasks/overview",
+                  "documentation/scheduling-tasks/on-a-day-or-week",
+                  "documentation/scheduling-tasks/on-your-calendar"
+                ]
+              },
+              "documentation/planning-your-year-and-quarter",
+              "documentation/planning-your-week-and-day",
+              "documentation/projects-and-areas",
+              "documentation/notes-and-focus-mode",
+              "documentation/keyboard-shortcuts"
             ]
           }
-        ]
-      }
+
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Website",
+          "href": "https://findspace.app",
+          "icon": "globe"
         },
         {
-          "anchor": "Roadmap",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
+          "anchor": "Roadmap & Updates",
+          "href": "https://space.userjot.com/",
+          "icon": "upload"
         },
         {
-          "anchor": "Space website",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Support",
+          "href": "mailto:support@findspace.app",
+          "icon": "headset"
         }
       ]
     }
@@ -78,10 +85,19 @@
     }
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "links": [
+      {
+        "items": [
+          {
+            "label": "Terms & Conditions",
+            "href": "https://findspace.app/terms-conditions"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "https://findspace.app/privacy-policy"
+          }
+        ]
+      }
+    ]
   }
 }
