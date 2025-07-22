@@ -43,8 +43,9 @@
                 "group": "Planning",
                 "pages": [
                   "documentation/planning/overview",
-                  "documentation/planning-your-year-and-quarter",
-                  "documentation/planning-your-week-and-day"
+                  "documentation/planning/planning-your-year-and-quarter",
+                  "documentation/planning/planning-your-week-and-day",
+                  "documentation/planning/settings"
                 ]
               },
               "documentation/projects-and-areas",
