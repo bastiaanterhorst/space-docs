@@ -52,6 +52,13 @@
               "documentation/notes-and-focus-mode",
               "documentation/keyboard-shortcuts"
             ]
+          },
+          {
+            "group": "Legal",
+            "hidden": true,
+            "pages": [
+              "terms"
+            ]
           }
     ],
     "global": {
@@ -91,12 +98,8 @@
             "href": "https://findspace.app"
           },
           {
-            "label": "Terms of Use",
-            "href": "https://help.findspace.app/terms-privacy"
-          },
-          {
-            "label": "Privacy Policy",
-            "href": "https://help.findspace.app/terms-privacy"
+            "label": "Terms & Privacy",
+            "href": "https://help.findspace.app/terms"
           }
         ]
       }
