@@ -87,17 +87,17 @@
     "links": [
       {
         "items": [
-                    {
+          {
             "label": "Space Website",
             "href": "https://findspace.app"
           },
           {
             "label": "Terms of Use",
-            "href": "/terms-privacy"
+            "href": "https://help.findspace.app/terms-privacy"
           },
           {
             "label": "Privacy Policy",
-            "href": "/terms-privacy"
+            "href": "https://help.findspace.app/terms-privacy"
           }
         ]
       }
