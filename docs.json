@@ -7,7 +7,7 @@
     "light": "#7A65FD",
     "dark": "#745DFF"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "navigation": {
         "groups": [
           {
@@ -79,19 +79,7 @@
     "light": "/logo/light.png",
     "dark": "/logo/dark.png"
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
+  
   "banner": {
     "content": "Like Space, these docs are in beta. If you need help, shoot me an [email](mailto:bastiaan@findspace.app)"
   },
@@ -100,12 +88,12 @@
       {
         "items": [
           {
-            "label": "Terms & Conditions",
-            "href": "https://findspace.app/terms-conditions"
+            "label": "Terms of Use",
+            "href": "https://findspace.app/terms-privacy"
           },
           {
             "label": "Privacy Policy",
-            "href": "https://findspace.app/privacy-policy"
+            "href": "https://findspace.app/terms-privacy"
           }
         ]
       }
