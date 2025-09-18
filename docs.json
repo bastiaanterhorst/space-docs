@@ -14,43 +14,43 @@
             "group": "Start here",
             "pages": [
               "index",
-              "why-space"
+              "space-method",
+              "going-deeper"
             ]
           },
           {
             "group": "Guides",
             "pages": [
-              "guides/the-space-method",
-              "guides/start-with-planning",
-              "guides/scheduling-tasks",
-              "guides/organise-your-way",
+              "guides/the-basics",
+              "guides/planning-your-year-and-quarter",
+              "guides/start-with-weekly-daily-planning",
+              "guides/time-blocking",
+              "guides/organise-project-area",
               "guides/getting-productive"
             ]
           },
           {
-            "group": "Documentation",
+            "group": "Reference",
             "pages": [
-              "documentation/adding-and-editing-tasks",
-              {
-                "group": "Scheduling Tasks",
-                "pages": [
-                  "documentation/scheduling-tasks/overview",
-                  "documentation/scheduling-tasks/on-a-day-or-week",
-                  "documentation/scheduling-tasks/on-your-calendar"
-                ]
-              },
+              "reference/tasks",
+              "reference/calendar",
+              "reference/screens",
               {
                 "group": "Planning",
                 "pages": [
-                  "documentation/planning/overview",
-                  "documentation/planning/planning-your-year-and-quarter",
-                  "documentation/planning/planning-your-week-and-day",
-                  "documentation/planning/settings"
+                  "reference/planning/weekly-daily-planning",
+                  "reference/planning/quarter-year",
+                  "reference/planning/planning-settings",
+                  "reference/planning/recommended-use"
                 ]
               },
-              "documentation/projects-and-areas",
-              "documentation/notes-and-focus-mode",
-              "documentation/keyboard-shortcuts"
+              {
+                "group": "Other Topics",
+                "pages": [
+                  "reference/other-topics/keyboard-shortcuts",
+                  "reference/other-topics/siri"
+                ]
+              }
             ]
           },
           {
