@@ -38,10 +38,10 @@
               {
                 "group": "Planning",
                 "pages": [
+                  "reference/planning/recommended-use",
                   "reference/planning/weekly-daily-planning",
                   "reference/planning/quarter-year",
-                  "reference/planning/planning-settings",
-                  "reference/planning/recommended-use"
+                  "reference/planning/planning-settings"
                 ]
               },
               {
