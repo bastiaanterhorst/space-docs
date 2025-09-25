@@ -1,0 +1,9 @@
+table { 
+  width: 100% !important;
+  display: table !important;
+  text-align: left !important;
+}
+
+td {
+  text-align: left !important;
+}
