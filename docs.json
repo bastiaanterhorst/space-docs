@@ -1,11 +1,14 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
-  "name": "Space Documentation",
+  "name": "Space: Tasks and Plans for Mac and iOS",
   "colors": {
     "primary": "#7A65FD",
     "light": "#7A65FD",
     "dark": "#745DFF"
+  },
+  "fonts": {
+    "family": "IBM Plex Sans"
   },
   "favicon": "/favicon.png",
   "navigation": {
@@ -14,8 +17,7 @@
             "group": "Start here",
             "pages": [
               "index",
-              "space-method",
-              "going-deeper"
+              "space-method"
             ]
           },
           {
@@ -24,13 +26,12 @@
               "guides/the-basics",
               "guides/planning-your-year-and-quarter",
               "guides/start-with-weekly-daily-planning",
-              "guides/time-blocking",
-              "guides/organise-project-area",
-              "guides/getting-productive"
+              "guides/scheduling-tasks",
+              "guides/organize-your-way"
             ]
           },
           {
-            "group": "Reference",
+            "group": "Reference (WIP)",
             "pages": [
               "reference/tasks",
               "reference/calendar",
@@ -69,11 +70,6 @@
           "icon": "globe"
         },
         {
-          "anchor": "Roadmap & Updates",
-          "href": "https://space.userjot.com/",
-          "icon": "upload"
-        },
-        {
           "anchor": "Support",
           "href": "mailto:support@findspace.app",
           "icon": "headset"
@@ -87,7 +83,7 @@
   },
   
   "banner": {
-    "content": "Like Space, these docs are in beta. If you need help, shoot me an [email](mailto:bastiaan@findspace.app)"
+    "content": "[Download Space on the App Store](https://apps.apple.com/us/app/space-life-planner/id6502294348)"
   },
   "footer": {
     "links": [
