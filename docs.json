@@ -31,27 +31,15 @@
             ]
           },
           {
-            "group": "Reference (WIP)",
+            "group": "Reference",
             "pages": [
               "reference/tasks",
               "reference/screens",
               "reference/calendar",
               "reference/projects-areas",
-              {
-                "group": "Planning",
-                "pages": [
-                  "reference/planning/weekly-daily-planning",
-                  "reference/planning/quarter-year",
-                  "reference/planning/planning-settings"
-                ]
-              },
-              {
-                "group": "Other Topics",
-                "pages": [
-                  "reference/other-topics/keyboard-shortcuts",
-                  "reference/other-topics/siri"
-                ]
-              }
+              "reference/planning/quarter-year",
+              "reference/other-topics/keyboard-shortcuts",
+              "reference/other-topics/siri"
             ]
           },
           {
