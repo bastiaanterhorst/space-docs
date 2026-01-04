@@ -1,0 +1,55 @@
+---
+title: Sync Troubleshooting
+description: What to do if you have trouble syncing across devices
+---
+
+Normally, you should not have to do anything special for syncing to work. 
+If you are signed in with iCloud, it _just works_. 
+However, occasionally folks run into issues. 
+When you do, there are a number of things you can do to make sure you're set up right. This article walks you through them.
+
+## 1. Check your iCloud accounts
+
+It is crucial to understand that sync works through Apple iCloud. 
+Being signed in to **the same** Apple Account on all devices that you would like to sync is a hard requirement.
+
+If you're not signed into iCloud at all, Space will warn you in settings:
+
+<Frame caption="Not signed in to iCloud">
+  <img src="/images/sync-troubleshooting/no-icloud.png" />
+</Frame>
+
+Make sure that error goes away before proceeding, by signing in via iOS / MacOS Settings > iCloud. 
+
+Once signed in on all your devices, also check your iCloud storage is not full. That will prevent syncing.
+And while you're in your iCloud settings, pull up the list of applications that use iCloud for data storage. Check that list: Space should be in it, and its toggle should be ON.
+
+## 2. Check syncing status
+
+When you open Space Settings (the General tab), you'll see the sync status displayed. 
+Healthy indicates everything is set up for sync and you should be good to go.
+If you see a Syncing status and its your first time launching the app on a new device, 
+it might take a few minutes to finish syncing. Best to just keep the app open and lets it do its thing.
+Subsequent syncs will be much faster.
+
+<Frame caption="Not signed in to iCloud">
+  <img src="/images/sync-troubleshooting/syncing.png" />
+</Frame>
+
+## 3. If syncing hangs
+
+If for any of your devices you see that your sync status stays on _syncing_ for an extended period, iCloud might have gotten stuck.
+This happens sometimes, especially when first syncing a new device.
+
+The best remedy that I've found is to quit Space on all your devices, and then open it on all of them.
+Then, leave them open and in the foreground for 5 minutes. That generally resolves the issue.
+
+## 4. Still having problems?
+
+Send me an <a href="mailto:support@findspace.app">email</a> and tell me the following:
+- please confirm you've followed the steps above
+- what was the first platform and version you used Space on? (for instance, iOS 18.2)
+- what platform are you now adding where sync is not working? (for instance, MacOS 26.1)
+- did sync work for you in the past?
+- are you using calendars? How many do you have enabled?
+- are you using repeating tasks?
