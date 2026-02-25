@@ -1,0 +1,116 @@
+---
+title: "Using AI with Space"
+description: "Connect your AI tools to Space with MCP"
+---
+
+Space includes an integrated MCP (Model Context Protocol) server that allows you to connect your favourite
+AI tools to Space. This allows you to access and (optionally) manipulate your tasks, 
+plans, and everything else in Space.
+
+<Info>MCP support is include in the Mac version of Space</Info>
+
+You can use it to:
+
+- Read your tasks and planning views.
+- Update tasks, projects, areas, and day/week metadata (when write mode is enabled).
+- Schedule linked calendar events for tasks.
+- Use built-in prompts and argument completions for planning workflows.
+- Read reusable resources such as today/this week/day/week views.
+
+## 1. Enable MCP in Space
+
+In Space:
+
+1. Open `Settings`.
+2. Go to `AI`.
+3. Turn on `Enable MCP Server`.
+
+The settings screen shows the launch command (STDIO) you should use in your MCP client config:
+
+```bash
+"<path-to-space-binary>" --mcp-server
+```
+
+Some clients ask you to put in the command in a slightly different way. Here is OpenAI Codex for instance:
+
+<Frame caption="OpenAI Codex MCP configuration">
+  <img src="/images/mcp/codex.png" />
+</Frame>
+
+## 2. Choose Access Mode
+
+Space supports two MCP access modes:
+
+- `Read Only`
+- `Read & Write`
+
+### Read Only
+
+Use this when you want safe visibility from AI tools.
+
+- AI can list and read tasks/plans/views.
+- Write tools are not exposed.
+- Any write attempt is rejected.
+
+### Read & Write
+
+<Warning>When you enable Read & Write your AI tools can manipulate your data in Space, including DELETING EVERYTHING. Make sure you test with read-only mode first, and tread carefully.</Warning>
+
+Use this when you want the AI to actively manage your Space data.
+
+- Includes all read tools.
+- Adds write tools for creating/editing/sorting/scheduling.
+- High-impact write actions require confirmation:
+  - Interactive confirmation when the MCP client supports elicitation.
+  - Or explicit `confirm_destructive: true` in the tool call when interactive confirmation is unavailable.
+
+## 3. What You Can Do
+
+### Read operations
+
+- Inbox: get all inbox tasks.
+- Day view: get tasks scheduled for a day (`day_iso`).
+- Week view: get tasks scheduled for a week (`week`, `year`).
+- Project and area views.
+- Active long-term plans.
+
+### Write operations
+
+- Create/delete tasks in inbox/day/week/project/area.
+- Sort tasks in a selected view.
+- Edit task state, scheduling, assignment, notes, completion.
+- Schedule a calendar event linked to a task.
+- Create/edit projects and areas.
+- Edit day/week scheduled metadata (`planned`, `notes`).
+
+### Prompts and completions
+
+- Prompt catalog for day/week/inbox/project and long-term plan workflows.
+- Prompt argument completion for dates, week/year, quarter, and ids.
+
+### Resources
+
+- `space://context/today` (Today View)
+- `space://context/this_week` (This Week View)
+- `space://context/day/{date}` (Day View)
+- `space://context/week/{year}/{week}` (Week View)
+- `space://plans/active`
+- `space://projects/{project_id}/summary`
+
+## 4. Important Behavior Notes
+
+- `day_iso` values are local calendar day semantics (`YYYY-MM-DD`) in the current system timezone.
+- Week inputs are ISO week semantics (`week` + `year`).
+- Some tools default `include_late` / `include_late_day` based on your Space preferences if not provided explicitly.
+- IDs such as `project_id` and `area_id` are opaque tokens returned by Space.
+
+## 5. Recommended Setup
+
+To be on the safe side:
+
+1. Start in `Read Only`.
+2. Test your client prompts and resource usage.
+3. Switch to `Read & Write` only after confirming the AI behavior you want.
+4. Keep destructive confirmation enabled in your agent/tooling flow (interactive elicitation or `confirm_destructive`).
+
+This gives you strong safety while still unlocking automation when you need it.
