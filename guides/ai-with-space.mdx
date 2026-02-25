@@ -139,6 +139,8 @@ If your client does not support MCP resources, you can ignore them and use tools
 - `day_iso` values are local calendar day semantics (`YYYY-MM-DD`) in the current system timezone.
 - Week inputs use ISO week semantics (`week` + `year`).
 - Some tools default `include_late` / `include_late_day` from your Space preferences when omitted.
+- `sort_tasks` follows your rollover preference for day/week late-task visibility. Sorting a day or week also normalizes visible late tasks to that day/week. Sorting a project or area does not change scheduling.
+- `edit_heading` cannot leave a heading without a parent. A heading must belong to exactly one project or area.
 - IDs such as `project_id`, `area_id`, `heading_id`, and `plan_id` are opaque tokens returned by Space.
 - Destructive confirmation is only required for delete actions.
 
