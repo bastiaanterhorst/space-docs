@@ -9,12 +9,12 @@ Space includes an integrated MCP (Model Context Protocol) server that lets compa
 
 You can use it to:
 
-- Read your tasks and planning views.
-- Search tasks.
-- Update tasks, projects, areas, and day/week metadata (when write mode is enabled).
-- Schedule linked calendar events for tasks.
-- Use built-in prompts and completions for planning workflows.
-- Read reusable resources such as today/this week/day/week snapshots.
+- Read inbox/day/week/project/area views.
+- Search tasks and inspect long-term plans.
+- Create, update, sort, and delete tasks/projects/areas/headings (when write mode is enabled).
+- Apply bulk task changes.
+- Manage long-term plans from AI.
+- Use built-in prompts/completions and read-only MCP resources.
 
 ## 1. Enable MCP in Space
 
@@ -47,92 +47,106 @@ Space supports two MCP access modes:
 
 Use this when you want safe visibility from AI tools.
 
-- AI can list and read tasks/plans/views.
+- AI can read your views, projects, areas, headings, and long-term plans.
 - Write tools are not exposed.
 - Any write attempt is rejected.
 
 ### Read & Write
 
-<Warning>When you enable Read & Write your AI tools can manipulate your data in Space, including DELETING EVERYTHING. Make sure you test with read-only mode first, and tread carefully.</Warning>
+<Warning>When you enable Read & Write your AI tools can manipulate your data in Space, including deleting data. Start with read-only mode first and move to write mode only when you trust your tool setup.</Warning>
 
 Use this when you want the AI to actively manage your Space data.
 
 - Includes all read tools.
-- Adds write tools for creating/editing/sorting/scheduling.
-- Destructive actions (currently task deletion) require confirmation:
+- Adds write tools for task/project/area/heading/plan management.
+- Destructive actions require confirmation:
   - Interactive confirmation when the MCP client supports elicitation.
-  - Or explicit `confirm_destructive: true` in the tool call when interactive confirmation is unavailable.
+  - Or explicit `confirm_destructive: true` when interactive confirmation is unavailable.
 
 ## 3. What You Can Do
 
 ### Read operations
 
-- Inbox: get all inbox tasks.
-- Day view: get tasks scheduled for a day (`day_iso`).
-- Week view: get tasks scheduled for a week (`week`, `year`).
-- List areas (`list_areas`).
-- List projects (`list_projects`), with optional filters for area and completed status.
-- Project and area views.
-- Active long-term plans.
+- `get_inbox`, `get_day`, `get_week`, `get_project`, `get_area`
+- `list_projects`, `list_areas`, `list_headings`
+- `list_long_term_plans`, `get_long_term_plan`
+- `search_todos`
 
 ### Write operations
 
-- Create/delete tasks in inbox/day/week/project/area.
-- Reorder tasks in a selected view.
-- Edit task state, scheduling, assignment, notes, completion.
-- Schedule a calendar event linked to a task.
-- Create/edit projects and areas.
-- Edit day/week scheduled metadata (`planned`, `notes`).
+Task operations:
 
-## 4. Prompts and Resources
+- `add_task`, `edit_task`, `delete_task`, `sort_tasks`
+- `bulk_edit_tasks`, `bulk_delete_tasks`
+- `schedule_task_event`
 
-You can use Space over MCP with tools only. Prompts and resources are optional extras that some clients support and can improve the precision of your actions.
+Structure operations:
+
+- `add_project`, `edit_project`, `delete_project`
+- `add_area`, `edit_area`, `delete_area`
+- `add_heading`, `edit_heading`, `sort_headings`, `delete_heading`
+
+Planning metadata and cleanup:
+
+- `edit_day`, `edit_week`
+- `delete_completed_todos` (project/area scope)
+
+Long-term planning:
+
+- `add_long_term_plan` (always creates a linked project)
+- `edit_long_term_plan`
+- `list_long_term_plans` (defaults to active plans when no state filter is passed)
+
+## 4. Prompts and Resources (Do You Need Them?)
+
+You can use Space with tools only. Prompts and resources are optional, but useful in clients that support them.
 
 ### Prompts
 
-Prompts are pre-built AI workflows (for example: day brief, week plan, inbox triage).  
-They help the AI start with the right structure and context instead of improvising every time.
+Use prompts when you want better AI planning quality without writing a long instruction every time.
 
-Use prompts when you want planning help quickly and consistently.
+Prompts in Space include workflows like:
 
-If your client supports prompt argument completions, Space can also suggest values such as:
+- day brief
+- week planning
+- inbox triage
+- project review
+- long-term plan summary/status/risks/alignment
 
-- `day_iso` dates
-- week/year values
-- `project_id`, `area_id`, and `plan_id` tokens
+If your client supports prompt argument completion, Space can suggest:
+
+- `day_iso`
+- `week` / `year`
+- `project_id`, `area_id`, `plan_id`
 
 ### Resources
 
-Resources are read-only, addressable snapshots of key Space views.  
-They are useful when a client can preload context before asking the AI to reason.
+Use resources when your client can preload data via MCP resource reads.
 
-Available resource URIs:
+Resources are read-only snapshots such as:
 
-- `space://context/today` (Today View)
-- `space://context/this_week` (This Week View)
-- `space://context/day/{date}` (Day View)
-- `space://context/week/{year}/{week}` (Week View)
+- `space://context/today`
+- `space://context/this_week`
+- `space://context/day/{date}`
+- `space://context/week/{year}/{week}`
 - `space://plans/active`
 - `space://projects/{project_id}/summary`
 
-Use resources when your client has explicit “read resource” support.  
-If it does not, you can ignore resources and use tools like `get_day` and `get_week` directly.
+If your client does not support MCP resources, you can ignore them and use tools directly (`get_day`, `get_week`, etc.).
 
 ## 5. Important Behavior Notes
 
 - `day_iso` values are local calendar day semantics (`YYYY-MM-DD`) in the current system timezone.
-- Week inputs are ISO week semantics (`week` + `year`).
-- Some tools default `include_late` / `include_late_day` based on your Space preferences if not provided explicitly.
-- IDs such as `project_id` and `area_id` are opaque tokens returned by Space.
-- For `sort_tasks`, pass `ordered_todo_uuids` in the order you want.
+- Week inputs use ISO week semantics (`week` + `year`).
+- Some tools default `include_late` / `include_late_day` from your Space preferences when omitted.
+- IDs such as `project_id`, `area_id`, `heading_id`, and `plan_id` are opaque tokens returned by Space.
+- Destructive confirmation is only required for delete actions.
 
 ## 6. Recommended Setup
 
-To be on the safe side:
-
 1. Start in `Read Only`.
-2. Test basic read tools first (`get_day`, `get_week`, `get_inbox`).
-3. Switch to `Read & Write` only after confirming the AI behavior you want.
-4. Keep destructive confirmation enabled in your agent/tooling flow for delete actions (interactive elicitation or `confirm_destructive`).
+2. Validate basic reads first (`get_day`, `get_week`, `get_inbox`).
+3. Move to `Read & Write` only after your AI behavior is predictable.
+4. Keep delete confirmation enabled in your agent/tool flow (`confirm_destructive` fallback where needed).
 
-This gives you strong safety while still unlocking automation when you need it.
+This gives you strong safety while still unlocking practical MCP automation.
