@@ -16,7 +16,7 @@ When you do, there are a number of things you can do to make sure you're set up 
 ## 1. Check your iCloud accounts
 
 It is crucial to understand that sync works through Apple iCloud, only.
-Being signed in to **the same** Apple Account on all devices that you would like to sync is a hard requirement.
+Being signed in to **the same** Apple Account on all devices that you would like to sync is a hard requirement. Is it also **required** that you have some free storage space available on iCloud.
 
 If you're not signed into iCloud at all, Space will warn you in settings:
 
@@ -49,7 +49,22 @@ This happens sometimes, especially when first syncing a new device.
 The best remedy that I've found is to quit Space on all your devices, and then open it on all of them.
 Then, leave them open and in the foreground for 5 minutes. That generally resolves the issue.
 
-## 4. Still having problems?
+## 4. Clear Space' local cache
+
+You can remove the local cache that Space holds for your data, so it fetches it anew from iCloud. This usually solves syncing issues.
+Do remove the cache, follow these steps:
+
+- Quit Space on the Mac
+- Open the Finder
+- In the Go menu click Go to Folder and enter this: `~/Library/Containers/net.map-territory.Space/Data/Library/Application Support/`
+- You end up in a folder where you'll see a bunch of files and folders
+- Delete the following files `default.store`, `default.store-shm`, `default.store-wal`
+- Start Space, it should start syncing
+
+Note that if you remove the local cache you will lose any changes that had not synced to iCloud yet!
+
+
+## 5. Still having problems?
 
 Send me an <a href="mailto:support@findspace.app">email</a> and tell me the following:
 - please confirm you've followed the steps above
