@@ -3,152 +3,32 @@ title: "Using AI with Space"
 description: "Connect your AI tools to Space with MCP"
 ---
 
-Space includes an integrated MCP (Model Context Protocol) server that lets compatible AI tools read and optionally edit your Space data.
+Space for Mac has a built-in MCP server that lets you integrate Space with agentic AI tools. MCP (Model Context Protocol) is 
+emerging as the standard way to connect apps to AI agents, and it is easy to set up. The video below shows you how you can connect
+Space to OpenAI Codex and Craft Agents, and setup for other agentic tools will be very similar.
 
-<Info>MCP support is included in the Mac version of Space.</Info>
+## Video walkthrough
 
-You can use it to:
-
-- Read inbox/day/week/project/area views.
-- Search tasks and inspect long-term plans.
-- Create, update, sort, and delete tasks/projects/areas/headings (when write mode is enabled).
-- Apply bulk task changes.
-- Manage long-term plans from AI.
-- Use built-in prompts/completions and read-only MCP resources.
-
-## 1. Enable MCP in Space
-
-In Space:
-
-1. Open `Settings`.
-2. Go to `AI`.
-3. Turn on `Enable MCP Server`.
-
-The settings screen shows the launch command (STDIO) you should use in your MCP client config:
-
-```bash
-"<path-to-space-binary>" --mcp-server
-```
-
-Some clients ask you to enter the command in a slightly different format. Here is OpenAI Codex for example:
-
-<Frame caption="OpenAI Codex MCP configuration">
-  <img src="/images/mcp/codex.png" />
+<Frame caption="Getting started with AI in Space">
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://www.youtube.com/embed/H_97XKfa3zE"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+  style={{ width: '100%', borderRadius: '0.5rem' }}
+></iframe>
 </Frame>
 
-## 2. Choose Access Mode
+---
 
-Space supports two MCP access modes:
-
-- `Read Only`
-- `Read & Write`
-
-### Read Only
-
-Use this when you want safe visibility from AI tools.
-
-- AI can read your views, projects, areas, headings, and long-term plans.
-- Write tools are not exposed.
-- Any write attempt is rejected.
-
-### Read & Write
-
-<Warning>When you enable Read & Write your AI tools can manipulate your data in Space, including deleting data. Start with read-only mode first and move to write mode only when you trust your tool setup.</Warning>
-
-Use this when you want the AI to actively manage your Space data.
-
-- Includes all read tools.
-- Adds write tools for task/project/area/heading/plan management.
-- Destructive actions require confirmation:
-  - Interactive confirmation when the MCP client supports elicitation.
-  - Or explicit `confirm_destructive: true` when interactive confirmation is unavailable.
-
-## 3. What You Can Do
-
-### Read operations
-
-- `get_inbox`, `get_day`, `get_week`, `get_project`, `get_area`
-- `list_projects`, `list_areas`, `list_headings`
-- `list_long_term_plans`, `get_long_term_plan`
-- `search_todos`
-
-### Write operations
-
-Task operations:
-
-- `add_task`, `edit_task`, `delete_task`, `sort_tasks`
-- `bulk_edit_tasks`, `bulk_delete_tasks`
-- `schedule_task_event`
-
-Structure operations:
-
-- `add_project`, `edit_project`, `delete_project`
-- `add_area`, `edit_area`, `delete_area`
-- `add_heading`, `edit_heading`, `sort_headings`, `delete_heading`
-
-Planning metadata and cleanup:
-
-- `edit_day`, `edit_week`
-- `delete_completed_todos` (project/area scope)
-
-Long-term planning:
-
-- `add_long_term_plan` (always creates a linked project)
-- `edit_long_term_plan`
-- `list_long_term_plans` (defaults to active plans when no state filter is passed)
-
-## 4. Prompts and Resources (Do You Need Them?)
-
-You can use Space with tools only. Prompts and resources are optional, but useful in clients that support them.
-
-### Prompts
-
-Use prompts when you want better AI planning quality without writing a long instruction every time.
-
-Prompts in Space include workflows like:
-
-- day brief
-- week planning
-- inbox triage
-- project review
-- long-term plan summary/status/risks/alignment
-
-If your client supports prompt argument completion, Space can suggest:
-
-- `day_iso`
-- `week` / `year`
-- `project_id`, `area_id`, `plan_id`
-
-### Resources
-
-Use resources when your client can preload data via MCP resource reads.
-
-Resources are read-only snapshots such as:
-
-- `space://context/today`
-- `space://context/this_week`
-- `space://context/day/{date}`
-- `space://context/week/{year}/{week}`
-- `space://plans/active`
-- `space://projects/{project_id}/summary`
-
-If your client does not support MCP resources, you can ignore them and use tools directly (`get_day`, `get_week`, etc.).
-
-## 5. Important Behavior Notes
-
-- `day_iso` values are local calendar day semantics (`YYYY-MM-DD`) in the current system timezone.
-- Week inputs use ISO week semantics (`week` + `year`).
-- Some tools default `include_late` / `include_late_day` from your Space preferences when omitted.
-- `sort_tasks` follows your rollover preference for day/week late-task visibility. Sorting a day or week also normalizes visible late tasks to that day/week. Sorting a project or area does not change scheduling.
-- `edit_heading` cannot leave a heading without a parent. A heading must belong to exactly one project or area.
-- IDs such as `project_id`, `area_id`, `heading_id`, and `plan_id` are opaque tokens returned by Space.
-- Destructive confirmation is only required for delete actions.
-
-## 6. Recommended Setup
-
-1. Start in `Read Only`.
-2. Validate basic reads first (`get_day`, `get_week`, `get_inbox`).
-3. Move to `Read & Write` only after your AI behavior is predictable.
-4. Keep delete confirmation enabled in your agent/tool flow (`confirm_destructive` fallback where needed).
-
-This gives you strong safety while still unlocking practical MCP automation.
+<Card
+  title="Learn more about AI in Space"
+  icon="bookmark"
+  href="/reference/ai-with-mcp"
+  arrow="true"
+  cta="Open the Reference"
+>
+  Get all the details on AI in Space with MCP.
+</Card>
