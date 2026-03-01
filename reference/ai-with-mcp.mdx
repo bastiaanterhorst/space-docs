@@ -13,9 +13,8 @@ description: "Connect your AI tools to Space with MCP"
   Get introduced to AI in Space.
 </Card>
 
-Space includes an integrated MCP (Model Context Protocol) server that lets compatible AI tools read and optionally edit your Space data.
-
-<Info>MCP support is included in the Mac version of Space.</Info>
+Space includes an integrated MCP (Model Context Protocol) server that lets agentic AI tools read and optionally edit your Space data.
+This enables exciting workflows that combine Space with the other systems that you use. 
 
 You can use it to:
 
@@ -26,34 +25,24 @@ You can use it to:
 - Manage yearly and quarterly plans from AI.
 - Use built-in prompts/completions and read-only MCP resources.
 
-## 1. Enable MCP in Space
+---
+
+## Enabling MCP in Space
+
+<Info>MCP support is included in the Mac version of Space.</Info>
 
 In Space:
 
 1. Open `Settings`.
 2. Go to `AI`.
-3. Turn on `Enable MCP Server`.
+3. Turn on `Enable MCP`.
 
-The settings screen shows the launch command (STDIO) you should use in your MCP client config:
+In this section you can configure:
 
-```bash
-"<path-to-space-binary>" --mcp-server
-```
+- `Port` (default: `2402`, valid range: `1024-65535`).
+- `Access Mode` (`Read Only` or `Read & Write`).
 
-Some clients ask you to enter the command in a slightly different format. Here is OpenAI Codex for example:
-
-<Frame caption="OpenAI Codex MCP configuration">
-  <img src="/images/mcp/codex.png" />
-</Frame>
-
-## 2. Choose Access Mode
-
-Space supports two MCP access modes:
-
-- `Read Only`
-- `Read & Write`
-
-### Read Only
+### Access Mode: Read Only
 
 Use this when you want safe visibility from AI tools.
 
@@ -61,7 +50,7 @@ Use this when you want safe visibility from AI tools.
 - Write tools are not exposed.
 - Any write attempt is rejected.
 
-### Read & Write
+### Access Mode: Read & Write
 
 <Warning>When you enable Read & Write your AI tools can manipulate your data in Space, including deleting data. Start with read-only mode first and move to write mode only when you trust your tool setup.</Warning>
 
@@ -73,7 +62,64 @@ Use this when you want the AI to actively manage your Space data.
   - Interactive confirmation when the MCP client supports elicitation.
   - Or explicit `confirm_destructive: true` when interactive confirmation is unavailable.
 
-## 3. What You Can Do
+---
+
+## Connecting AI tools to Space
+
+In `Settings > AI`, copy the `Endpoint` shown in the `Authenticate` section (for example `http://127.0.0.1:2402/`) and use that as your MCP server URL in your AI tool.
+
+Space MCP listens on localhost (`127.0.0.1`) and uses HTTP transport with OAuth. 
+The oAuth flow will ask for a time based pairing code which is shown in the settings screen.
+
+<Frame caption="Time based pairing code">
+  <img src="/images/mcp/pairing.png" />
+</Frame>
+
+
+### Connecting to Claude Code
+
+In a terminal, run `claude mcp add --transport http space http://127.0.0.1:2402/`.
+Then start Claude Code by running `claude`. When started, run `/mcp`. You should see Space listed as 'unauthenticated'. Press enter to select Space, and then again enter to confirm authentication.
+A browser window will appear asking for your pairing code. Get it from your Space Settings screen on the AI tab.
+
+<Frame caption="Claude inspecting Space MCP">
+  <img src="/images/mcp/claude.png" />
+</Frame>
+
+### Connecting to OpenAI Codex CLI
+
+In a terminal, run `codex mcp add Space --url http://127.0.0.1:2402/`. A browser window should open asking you for the pairing code. 
+Get it from your Space Settings screen on the AI tab.
+
+The Codex Desktop app will automatically pick this registration up as well!
+
+### Connecting to OpenAI Codex Desktop App
+
+Open `Settings` -> `MCP Servers` and click `+ Add server`. Give the server a name (like `Space`). Select `Streamable HTTP` as the transport and enter `http://127.0.0.1:2402/` as URL.
+
+<Frame caption="Codex Desktop">
+  <img src="/images/mcp/codex-ui-1.png" />
+</Frame>
+
+Click `Save`. Now you see an `Authenticate` button appear next to the entry. Click it and enter the pairing code found in Space Settings on the AI tab.
+
+<Frame caption="Codex Desktop">
+  <img src="/images/mcp/codex-ui-2.png" />
+</Frame>
+
+### Connecting to Craft Agents
+
+Navigate to `Sources` -> `MCPs` and click `+`. In the popup, enter something like "Connect to "Space Life Planner", an MCP server at http://127.0.0.1:2402/"
+After some noodling, Craft Agents will ask you to allow opening the oAuth screen. Do that and enter the pairing code you find in Space Settings on the AI tab.
+
+
+### Connected Clients
+
+Space shows all connected clients. You can always disconnect a client from within Space to immediately revoke its access.
+
+---
+
+## What You Can Do
 
 ### Read operations
 
@@ -107,7 +153,7 @@ Long-term planning (yearly and quarterly plans):
 - `edit_long_term_plan`
 - `list_long_term_plans` (defaults to active plans when no state filter is passed)
 
-## 4. Prompts and Resources
+## 7. Prompts and Resources
 
 You can use Space with tools only. Prompts and resources are optional, but useful in clients that support them.
 
@@ -124,15 +170,9 @@ Prompt families:
 
 How to think about them:
 
-- Use a **briefing** prompt when you want a fast read of current reality.
+- Use a **briefing** prompt when you want a quick summary of your day or week.
 - Use a **planning** prompt when you want the AI to propose an execution plan.
 - Use `ltp_plan_assist` when you want help designing a new quarter/year plan.
-
-If your client supports prompt argument completion, Space can suggest values for:
-
-- `day_iso`, `week`, `year`, `quarter`
-- `project_id`, `area_id`, `plan_id`
-- `plan_type`, `grouping_framework`
 
 ### Resources
 
@@ -149,23 +189,23 @@ Resources are read-only snapshots such as:
 
 If your client does not support resources, you can ignore them and call tools directly (`get_day`, `get_week`, `get_day_events`, etc.).
 
-## 5. Important Behavior Notes
+## Important Behavior Notes
 
 - `day_iso` values are local calendar day semantics (`YYYY-MM-DD`) in the current system timezone.
-- `get_day_events` uses the same visible-calendar pipeline as the timeline and returns `conferencing_url` when Space can detect one from event content.
 - Week inputs use ISO week semantics (`week` + `year`).
-- Some tools default `include_late` / `include_late_day` from your Space preferences when omitted.
-- `sort_tasks` follows your rollover preference for day/week late-task visibility. Sorting a day or week also normalizes visible late tasks to that day/week. Sorting a project or area does not change scheduling.
-- `edit_group` cannot leave a group without a parent. A group must belong to exactly one project or area.
-- Group `intensity` is a score from `0` to `10`; use `null` in `edit_group` to disable group intensity scoring.
+- `get_day_events` uses the same visible-calendar pipeline as the in-app calendar.
+- Tools tht offer `include_late` / `include_late_day` filtering fall back to Space preferences when omitted.
+- `sort_tasks` follows your rollover preference for day/week late-task visibility. Sorting a day or week also normalizes visible late tasks to that day/week.
+- Group `intensity` is a score from `0` to `10`; use `null` in `edit_group` to disable group intensity scoring. Group intensity is primarily used for yearly and quarterly plans.
 - IDs such as `project_id`, `area_id`, `group_id`, and `plan_id` are opaque tokens returned by Space.
-- Destructive confirmation is only required for delete actions.
 
-## 6. Recommended Setup
+## Recommended Setup
 
 1. Start in `Read Only`.
-2. Validate basic reads first (`get_day`, `get_week`, `get_inbox`).
-3. Move to `Read & Write` only after your AI behavior is predictable.
-4. Keep delete confirmation enabled in your agent/tool flow (`confirm_destructive` fallback where needed).
+2. Connect your MCP client to the HTTP endpoint shown in Space.
+3. Complete OAuth using the pairing code shown in `Settings > AI`.
+4. Validate basic reads first (`get_day`, `get_week`, `get_inbox`).
+5. Move to `Read & Write` only after your AI behavior is predictable.
+6. Keep delete confirmation enabled in your agent/tool flow (`confirm_destructive` fallback where needed).
 
 This gives you strong safety while still unlocking practical MCP automation.
