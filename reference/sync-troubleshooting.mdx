@@ -43,33 +43,29 @@ Subsequent syncs will be much faster.
 
 ## 3. If syncing hangs
 
-If for any of your devices you see that your sync status stays on _syncing_ for an extended period, iCloud might have gotten stuck.
-This happens sometimes, especially when first syncing a new device.
+If for any of your devices you see that your sync status shows _stalled_, iCloud might have gotten stuck.
+This happens sometimes, and unfortunately is not entirely within Space' control to fix. Usually, it is iCloud itself having issues.
 
-The best remedy that I've found is to quit Space on all your devices, and then open it on all of them.
-Then, leave them open and in the foreground for 5 minutes. That generally resolves the issue.
+Usually, this is easily fixed by restarting Space. If that does not help, restarting your Mac also helps. This problem does not seem to happen on iOS.
 
 ## 4. Clear Space' local cache
 
-You can remove the local cache that Space holds for your data, so it fetches it anew from iCloud. This usually solves syncing issues.
+If restarting Space or your Mac does not help, a nuclear option that works for some users is to remove the local cache that Space holds for your data, so it fetches it anew from iCloud. This usually solves syncing issues.
 Do remove the cache, follow these steps:
 
 - Quit Space on the Mac
 - Open the Finder
-- In the Go menu click Go to Folder and enter this: `~/Library/Containers/net.map-territory.Space/Data/Library/Application Support/`
+- In the Go menu click Go to Folder and enter this: `~/Library/Group Containers/group.net.map-territory.space/Library/Application Support/`
 - You end up in a folder where you'll see a bunch of files and folders
 - Delete the following files `default.store`, `default.store-shm`, `default.store-wal`
 - Start Space, it should start syncing
 
 Note that if you remove the local cache you will lose any changes that had not synced to iCloud yet!
 
-
 ## 5. Still having problems?
 
 Send me an <a href="mailto:support@findspace.app">email</a> and tell me the following:
 - please confirm you've followed the steps above
-- what was the first platform and version you used Space on? (for instance, iOS 18.2)
-- what platform are you now adding where sync is not working? (for instance, MacOS 26.1)
+- what OS version are you on?
+- what Space version and build number are you on? (Menubar `Space` and `About Space`)
 - did sync work for you in the past?
-- are you using calendars? How many do you have enabled?
-- are you using repeating tasks?
