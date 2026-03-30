@@ -1,5 +1,5 @@
 ---
-title: "AI: MCP Support"
+title: "Connect to AI Agents"
 description: "Connect your AI tools to Space with MCP"
 ---
 
@@ -10,46 +10,44 @@ description: "Connect your AI tools to Space with MCP"
   arrow="true"
   cta="Open the Walkthrough"
 >
-  Get introduced to AI in Space.
+  Get introduced to AI in Sp§ace.
 </Card>
 
-If you use agentic AI tools like Claude Code, OpenAI Codex, or Craft Agents, you can connect them to Space via MCP (Model Context Protocol).
+If you use agentic AI tools like Claude, Codex, or Craft Agents, you can connect them to Space.
 
-Once connected, your AI tool can **read your Space data** (like your inbox, today, and your projects) and—if you allow it—**help you make changes** (like creating tasks or updating plans).
+Once connected, your AI tool can **read your Space data** (like your inbox, today, and your projects) and — if you allow it — **help you make changes** (like creating tasks or updating plans).
 
-## What MCP unlocks
+The connection between Space and your AI tool is made using [MCP](https://modelcontextprotocol.io/docs/getting-started/intro), an emerging standard that many agentic tools support. Getting started is easy.
 
-Use MCP when you want your AI tool to work with the same information you see in Space.
-
-Common workflows:
+So what can you do?
 
 - **Quick context**: get a briefing of today, this week, or a specific project.
 - **Search and review**: find tasks, check long-term plans, and spot what’s stuck.
-- **Hands-on changes (optional)**: create and update tasks/projects/areas/groups, and manage yearly/quarterly plans.
+- **Plan with more context**: connect other information sources to your agent for assisted goalsetting.
+- **Hands-on changes**: create and update tasks/projects/areas/groups, and manage yearly/quarterly plans.
+
+Some prompts to get you started:
+
+- “What does today look like in Space? Include events.”
+- “Open my current week and highlight anything overdue.”
+- “Get my action items from these meeting notes and add them to the Summer Promo project in Space.”
 
 ---
 
-## Before you start
-
-- MCP support is included in the **Mac** version of Space.
-- Your AI tool connects to Space on **localhost** (`127.0.0.1`).
-- You’ll authenticate using **OAuth** with a **time-based pairing code** shown in Space.
-
-<Info>If you only want visibility (and maximum safety), start with <b>Read Only</b>. You can switch to <b>Read &amp; Write</b> later.</Info>
-
----
 
 ## Enable MCP in Space
 
-In Space (Mac):
+<Info>MCP support is included in the **Mac** version of Space.</Info>
+
+In Space:
 
 1. Open `Settings`.
 2. Go to `AI`.
 3. Turn on `Enable MCP`.
 
-In this section you can configure:
+When off, you can configure:
 
-- `Port` (default: `2402`, valid range: `1024-65535`)
+- `Port` (default: `2402`)
 - `Access Mode` (`Read Only` or `Read & Write`)
 
 ### Choose an access mode
@@ -80,6 +78,27 @@ Pick this when you want the AI to actively manage your Space data.
 ---
 
 ## Connect an AI tool to Space
+
+### Tools that support MCPB files (like Claude Desktop)
+
+The easiest way to connect Space to your AI tool is using an MCP Bundle (an .mcpb file). This works in Claude Desktop.
+
+Open `Settings` and the `AI` tab. Under MCPB, click `Reveal in Finder` and double-click the `Space.mcpb` file. 
+In your AI tool you'll enter the pairing code shown in Space Settings, and you're done. 
+
+<Frame caption="Connecting to Claude Desktop">
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://www.youtube.com/embed/ZsMxKdXnULg"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+  style={{ width: '100%', borderRadius: '0.5rem' }}
+></iframe>
+</Frame>
+
+### Connecting manually
 
 In `Settings > AI`, copy the `Endpoint` shown in the `Authenticate` section (for example: `http://127.0.0.1:2402/`).
 
@@ -152,21 +171,9 @@ Click it and enter the pairing code from Space (`Settings > AI`).
 
 ---
 
-## Try it (read-only)
-
-After connecting, try a couple of simple requests first:
-
-- “Show me what’s in my Space inbox.”
-- “What does today look like in Space? Include events.”
-- “Open my current week and highlight anything overdue.”
-
-If these work reliably, then consider switching to **Read & Write**.
-
----
-
 ## Connected clients
 
-Space shows all connected clients. You can disconnect a client from within Space to immediately revoke its access.
+Space shows all connected clients in `Settings` > `AI`. You can disconnect a clients to immediately revoke access.
 
 ---
 
@@ -240,6 +247,7 @@ If your client does not support resources, you can ignore them and call tools di
 
 ## Important behavior notes
 
+- Space must be running to use it with your AI tools.
 - `day_iso` values are local calendar day semantics (`YYYY-MM-DD`) in the current system timezone.
 - Week inputs use ISO week semantics (`week` + `year`).
 - `get_day_events` uses the same visible-calendar pipeline as the in-app calendar.
@@ -247,12 +255,3 @@ If your client does not support resources, you can ignore them and call tools di
 - `sort_tasks` follows your rollover preference for day/week late-task visibility. Sorting a day or week also normalizes visible late tasks to that day/week.
 - Group `intensity` is a score from `0` to `10`; use `null` in `edit_group` to disable group intensity scoring. Group intensity is primarily used for yearly and quarterly plans.
 - IDs such as `project_id`, `area_id`, `group_id`, and `plan_id` are opaque tokens returned by Space.
-
-## Recommended setup
-
-1. Start in `Read Only`.
-2. Connect your MCP client to the HTTP endpoint shown in Space.
-3. Complete OAuth using the pairing code shown in `Settings > AI`.
-4. Validate basic reads first (`get_day`, `get_week`, `get_inbox`).
-5. Move to `Read & Write` only after your AI behavior is predictable.
-6. Keep delete confirmation enabled in your agent/tool flow.
