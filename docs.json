@@ -12,49 +12,44 @@
   },
   "favicon": "/favicon.png",
   "navigation": {
-        "groups": [
-          {
-            "group": "Start here",
-            "pages": [
-              "index",
-              "space-method",
-              "whats-new"
-            ]
-          },
-          {
-            "group": "Guides",
-            "pages": [
-              "guides/the-basics",
-              "guides/planning-your-year-and-quarter",
-              "guides/start-with-weekly-daily-planning",
-              "guides/scheduling-tasks",
-              "guides/repeating-tasks",
-              "guides/organize-your-way",
-              "guides/ai-with-space"
-            ]
-          },
-          {
-            "group": "Reference",
-            "pages": [
-              "reference/tasks",
-              "reference/screens",
-              "reference/calendar",
-              "reference/projects-areas",
-              "reference/planning/quarter-year",
-              "reference/ai-with-mcp",
-              "reference/other-topics/keyboard-shortcuts",
-              "reference/other-topics/share-extension",
-              "reference/other-topics/siri",
-              "reference/sync-troubleshooting"
-            ]
-          },
-          {
-            "group": "Legal",
-            "hidden": true,
-            "pages": [
-              "terms"
-            ]
-          }
+    "groups": [
+      {
+        "group": "Start here",
+        "pages": ["index", "space-method", "whats-new"]
+      },
+      {
+        "group": "Guides",
+        "pages": [
+          "guides/the-basics",
+          "guides/planning-your-year-and-quarter",
+          "guides/start-with-weekly-daily-planning",
+          "guides/scheduling-tasks",
+          "guides/repeating-tasks",
+          "guides/organize-your-way",
+          "guides/tags",
+          "guides/ai-with-space"
+        ]
+      },
+      {
+        "group": "Reference",
+        "pages": [
+          "reference/tasks",
+          "reference/screens",
+          "reference/calendar",
+          "reference/projects-areas",
+          "reference/planning/quarter-year",
+          "reference/ai-with-mcp",
+          "reference/other-topics/keyboard-shortcuts",
+          "reference/other-topics/share-extension",
+          "reference/other-topics/siri",
+          "reference/sync-troubleshooting"
+        ]
+      },
+      {
+        "group": "Legal",
+        "hidden": true,
+        "pages": ["terms"]
+      }
     ],
     "global": {
       "anchors": [
@@ -75,7 +70,7 @@
     "light": "/logo/light.png",
     "dark": "/logo/dark.png"
   },
-  
+
   "banner": {
     "content": "[Download Space on the App Store](https://apps.apple.com/us/app/space-life-planner/id6502294348)"
   },
