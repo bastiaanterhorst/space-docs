@@ -1,14 +1,11 @@
 ---
 title: "Calendars and Time blocking"
-description: "Finding your way around the calendar"
+description: "Connect your calendars, then block time for the work that matters"
 ---
 
-Space syncs with Google Calendar and Microsoft Outlook. Besides showing your events, the most useful feature is that you can schedule
-tasks onto your calendar. Not only does this give you a schedule for the day including your meetings 
-and your important tasks, but it also prevents people from planning meetings when were intending to focus on some work.
-The video below shows you how to set it up.
-
-## Calendar video walkthrough
+Space connects to the calendars already on your Mac and iPhone, shows your events next to your tasks,
+and lets you block time for tasks right on the calendar. Watch the setup walkthrough below, or read the
+written steps that follow.
 
 <Frame caption="Setting up calendars and basic usage">
 <iframe
@@ -22,9 +19,54 @@ The video below shows you how to set it up.
 ></iframe>
 </Frame>
 
-## Timeblocking video walkthrough
+## Connect your calendars
 
-<Frame caption="Calendars and time blocking in Space">
+On the Day or Week screen, Space invites you to add your calendars. Click the arrow to open
+**Settings**, then enable calendar access — macOS asks for permission, so choose **Allow Full Access**.
+
+Now click the **+** to see every calendar on your Mac. These come from the accounts in **System
+Settings → Internet Accounts**: any account there with calendars enabled shows up in Space, ready to
+add.
+
+## Choose a default calendar
+
+One calendar is marked as your **default** — it's where new events go, whether you create a plain event
+or schedule a task. Click any calendar to make it the default instead.
+
+<Tip>
+  Areas can have their own default calendar. Set one on an area, and tasks you schedule from that area
+  land on that calendar — shown in its own colour, so you can tell your work apart at a glance.
+</Tip>
+
+## Keep task names private
+
+When you put a task on your calendar, Space marks the event **private** by default. Anyone with access
+to your calendar sees only "Busy" rather than the task's name and notes.
+
+- For Google calendars specifically, connect your Google account in Space (**Connect Google account**)
+  to enable proper private marking — the standard Apple connection can't do this on its own.
+- For calendars that don't support private events, the name shows as "Scheduled task" instead.
+
+## Create and join events
+
+Click and drag in the calendar to create an event, then name it. Drag it around or adjust its start and
+end like any calendar.
+
+For a meeting with a video link, Space shows a video icon. Open the event and click **Join Video Call**,
+right-click and choose **Join Video Call**, or hover and press <kbd>Cmd</kbd> + <kbd>J</kbd>. You can
+also accept, decline, or mark an invitation tentative right from Space.
+
+## Block time for a task
+
+This is *time blocking* — putting a task on your calendar so you simply follow your schedule and know
+you'll reach your important work.
+
+- **By hand:** pick a task up and drag it onto the calendar. Stretch it if you need more time.
+- **Let Space find time:** select a task and press <kbd>Cmd</kbd> + <kbd>F</kbd> (or right-click →
+  **Find time on calendar**). Space finds the first opening that fits, respecting your working hours and
+  existing events.
+
+<Frame caption="Time blocking in Space">
 <iframe
   className="w-full aspect-video rounded-xl"
   src="https://www.youtube.com/embed/0tNDy039biE"
@@ -36,14 +78,22 @@ The video below shows you how to set it up.
 ></iframe>
 </Frame>
 
----
+<Info>
+  Working hours and the default event duration (30 minutes) are set in **Settings → Calendar**. They're
+  what <kbd>Cmd</kbd> + <kbd>F</kbd> uses to place a task. See [Auto-schedule](/reference/auto-schedule).
+</Info>
 
-<Card
-  title="Learn more about calendars in Space"
-  icon="bookmark"
-  href="/reference/calendar"
-  arrow="true"
-  cta="Open the Reference"
->
-  Get all the details on calendars.
-</Card>
+On the Week screen the same moves apply. Drop a task on a day it isn't scheduled for yet and it's
+scheduled for that day. Move the *event* and the task moves with it; move the *task* instead and the
+event is removed — it's still scheduled for the day, just no longer at a fixed time.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Calendar reference" icon="calendar" href="/reference/calendar">
+    Every detail of calendars in Space.
+  </Card>
+  <Card title="Repeating Tasks" icon="repeat" href="/guides/repeating-tasks">
+    Make a task — and its calendar event — come back automatically.
+  </Card>
+</CardGroup>

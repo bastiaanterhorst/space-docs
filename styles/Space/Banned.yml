@@ -1,0 +1,20 @@
+extends: existence
+message: "Off-brand wording: '%s'. See space-content/docs/voice-style-guide.md §4."
+level: warning
+ignorecase: true
+tokens:
+  - hustle
+  - grind
+  - crush it
+  - game-?changer
+  - life ?hack
+  - productivity hack
+  - 10x
+  - level up
+  - rise and grind
+  - inbox zero
+  - synergy
+  - circle back
+  - to-do list
+  - kanban
+  - mic drop

@@ -1,0 +1,44 @@
+# Documentation quality checks.
+# Starting point — verify locally (`vale sync && vale .`) before flipping Vale to blocking.
+name: Docs QA
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  alt-text:
+    name: Images have alt text
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fail on <img> without alt
+        run: |
+          if grep -rn '<img ' --include='*.mdx' . | grep -v 'alt='; then
+            echo "::error::Found <img> tags without alt text (see above)."
+            exit 1
+          fi
+          echo "All images have alt text."
+
+  prose:
+    name: Vale prose lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: errata-ai/vale-action@reviewdog
+        with:
+          files: .
+          fail_on_error: false # informational until the Space styles are tuned
+
+  links:
+    name: Broken links & images
+    runs-on: ubuntu-latest
+    continue-on-error: true # stays green while screenshots are still being added
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install -g mint
+      - run: mint broken-links

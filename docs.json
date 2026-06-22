@@ -18,33 +18,87 @@
         "pages": ["index", "space-method", "whats-new"]
       },
       {
+        "group": "Concepts",
+        "pages": ["concepts"]
+      },
+      {
         "group": "Guides",
         "pages": [
           "guides/the-basics",
           "guides/planning-your-year-and-quarter",
           "guides/start-with-weekly-daily-planning",
+          "guides/organize-your-way",
           "guides/scheduling-tasks",
           "guides/repeating-tasks",
-          "guides/organize-your-way",
           "guides/tags",
-          "guides/ai-with-space"
+          "how-to/capture-from-anywhere",
+          "guides/ai-with-space",
+          "how-to/move-your-data-in-and-out"
         ]
       },
       {
         "group": "Reference",
         "pages": [
-          "reference/tasks",
-          "reference/screens",
-          "reference/calendar",
-          "reference/projects-areas",
-          "reference/tags",
-          "reference/planning/quarter-year",
+          {
+            "group": "Tasks & organisation",
+            "pages": [
+              "reference/tasks",
+              "reference/screens",
+              "reference/projects-areas",
+              "reference/tags",
+              "reference/notes",
+              "reference/focus",
+              "reference/repeating-tasks",
+              "reference/overdue-tasks",
+              "reference/search"
+            ]
+          },
+          {
+            "group": "Planning",
+            "pages": [
+              "reference/planning/quarter-year",
+              "reference/planning/weekly-daily-planning"
+            ]
+          },
+          {
+            "group": "Calendar & scheduling",
+            "pages": [
+              "reference/calendar",
+              "reference/auto-schedule"
+            ]
+          },
           "reference/ai-with-mcp",
-          "reference/other-topics/keyboard-shortcuts",
-          "reference/other-topics/share-extension",
-          "reference/other-topics/siri",
-          "reference/manage-data",
-          "reference/sync-troubleshooting"
+          {
+            "group": "Capture & integrations",
+            "pages": [
+              "reference/quick-capture",
+              "reference/other-topics/siri",
+              "reference/other-topics/share-extension",
+              "reference/widgets",
+              "reference/markdown-export"
+            ]
+          },
+          {
+            "group": "Data & privacy",
+            "pages": [
+              "reference/import",
+              "reference/manage-data",
+              "reference/sync",
+              "reference/sync-troubleshooting",
+              "reference/privacy-and-data",
+              "reference/account-and-pricing"
+            ]
+          },
+          {
+            "group": "Settings & help",
+            "pages": [
+              "reference/settings",
+              "reference/notifications",
+              "reference/other-topics/keyboard-shortcuts",
+              "reference/troubleshooting",
+              "reference/glossary"
+            ]
+          }
         ]
       },
       {

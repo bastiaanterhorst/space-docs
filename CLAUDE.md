@@ -25,6 +25,9 @@
 
 ## Writing standards
 - Second-person voice ("you")
+- **UK English** (organise, colour, prioritise, favourite, behaviour). The one exception: a US keyword
+  that dominates search intent — flag the trade-off when you make that call. Note `<Badge color="...">`
+  and CSS are component/code attributes, not prose — leave them as-is.
 - Prerequisites at start of procedural content
 - Test all code examples before publishing
 - Match style and formatting of existing pages
@@ -32,6 +35,29 @@
 - Language tags on all code blocks
 - Alt text on all images
 - Relative paths for internal links
+- Run `vale .` and `mint broken-links` before publishing
+
+## Structure (Diátaxis)
+Pages live in one of four quadrants, wired in `docs.json`:
+- **Concepts** (Explanation) — the *why*. The mental model, not steps.
+- **Tutorials** — learning-oriented, hand-held walkthroughs (the video guides + their text). Keep the
+  video as a supplement; the page should stand on its own in text.
+- **How-to guides** — goal-oriented recipes for a specific task. Keep them lean and cross-cutting; don't
+  mirror a single reference page.
+- **Reference** — precise, scannable feature descriptions.
+
+Don't outsource a page's substance to a video. Avoid duplicating content across quadrants.
+
+## Reference page template
+Every reference page follows: **What it is → Where it lives (Mac/iPhone) → Fields & controls →
+Availability → Related**. Model on `reference/manage-data.mdx`, `reference/ai-with-mcp.mdx`, and
+`reference/other-topics/keyboard-shortcuts.mdx`.
+
+## Platform honesty
+Use `<Tabs>` ("Mac" / "iPhone & iPad") where steps diverge. Where iPhone genuinely lacks a feature —
+the guided planning flow, global hotkeys, the MCP server — state it with an Availability `<Warning>`.
+Never write steps for a flow a platform doesn't have. Source of truth for capabilities:
+`../space-content/docs/space-capabilities.md`.
 
 ## Git workflow
 - NEVER use --no-verify when committing

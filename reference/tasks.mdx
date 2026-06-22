@@ -1,6 +1,6 @@
 ---
 title: Tasks
-description: Find your way around tasks in Space
+description: Everything a task can hold, and how to work with it
 ---
 
 <Card
@@ -13,46 +13,79 @@ description: Find your way around tasks in Space
   Get introduced to the basic functionality of Space.
 </Card>
 
+A **task** is the atomic unit of work in Space. Everything you do flows through tasks — capturing them,
+scheduling them, and checking them off.
+
 ## Adding tasks
 
-Click or tap the purple `+` button to add a task. You can also press <kbd>CMD</kbd> + <kbd>N</kbd>.
+Click or tap the purple `+` button to add a task. On Mac you can also press <kbd>Cmd</kbd> + <kbd>N</kbd>.
 
 <Frame caption="Adding a new task">
-  <img src="/images/tasks/new.png" />
+  <img src="/images/tasks/new.png" alt="Adding a new task with the purple plus button" />
 </Frame>
 
 ## Editing tasks
 
-To begin editing a task, simply double click it (or tap it on iOS). Or select it with the arrow keys and press <kbd>Return</kbd>. You can then type away.
-The buttons bottom-right allow you to take quick action on the task: move it, schedule it, 
-or many other actions via the &hellip; menu.
+To begin editing a task, double-click it (or tap it on iPhone), or select it with the arrow keys and
+press <kbd>Return</kbd>. The buttons at the bottom-right let you take quick action — move it, schedule
+it, or reach many more actions through the &hellip; menu.
 
 <Frame caption="Moving a task">
-  <img src="/images/tasks/move.png" />
+  <img src="/images/tasks/move.png" alt="The quick-action buttons on a task, including move and schedule" />
 </Frame>
 
 <Info>
-  You can accomplish many actions on tasks using just your keyboard. Check out [keyboard shortcuts](/reference/other-topics/keyboard-shortcuts)
+  You can do almost everything to a task from the keyboard. See
+  [Keyboard shortcuts](/reference/other-topics/keyboard-shortcuts).
 </Info>
+
+## What a task can hold
+
+A single task can carry all of the following:
+
+- **Important flag** — mark a task important so it stands out and surfaces on your day
+  (<kbd>Cmd</kbd> + <kbd>T</kbd>).
+- **Scheduling** — assign a task to a **day** or a **week**, or place it on the
+  [calendar](/reference/calendar) as a time block.
+- **Notes & checklist** — context, links, formatting, and sub-tasks. See
+  [Notes & Checklists](/reference/notes).
+- **Project or area** — file a task in a [project or area](/reference/projects-areas), or leave it in
+  the [inbox](/reference/screens).
+- **Tags** — label a task so it shows up across [tag filters](/reference/tags)
+  (<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd>).
+- **Deadline** — a task inherits the deadline of its [project](/reference/projects-areas), which Space
+  surfaces as the date approaches.
+
+## Task states
+
+A task moves through three states:
+
+- **Open** — not started.
+- **In progress** — currently being worked on. Toggle with <kbd>Cmd</kbd> + <kbd>R</kbd>, or long-press
+  the checkbox.
+- **Complete** — done. Toggle by clicking the checkbox or pressing <kbd>Cmd</kbd> + <kbd>E</kbd>.
 
 ## Repeating tasks
 
-Right click a task and select `Edit Repetition` to make any task a repeating task. 
-If you want to know more about repeating tasks and see all the features in action, check out this [video](/guides/repeating-tasks).
+Any task can repeat — on a fixed schedule or when you complete it — and optionally add itself to your
+calendar. See [Repeating tasks](/reference/repeating-tasks).
 
 <Frame caption="Editing task repetition">
-  <img src="/images/tasks/recurring.png" />
+  <img src="/images/tasks/recurring.png" alt="The Edit Repetition dialog for a task" />
 </Frame>
 
+## Focus
 
+To work on a task distraction-free, open it in [Focus](/reference/focus) — full screen, with everything
+else out of the way (<kbd>Cmd</kbd> + <kbd>.</kbd> on Mac).
 
-## Focus view
+## Related
 
-To make a task full screen, select it and pick Focus from the Task menu, context menu, or press <kbd>Cmd</kbd> + <kbd>.</kbd>.
-This view is great for writing, and blocking out distractions.
-If your task is scheduled on the calendar, you will see the time. If it is scheduled for _now_, you will see how much
-time you have remaining.
-
-<Frame caption="Focus view">
-  <img src="/images/tasks/focus.png" />
-</Frame>
+<CardGroup cols={2}>
+  <Card title="Screens" icon="table-columns" href="/reference/screens">
+    Where tasks live: inbox, day, week, projects, areas.
+  </Card>
+  <Card title="Keyboard shortcuts" icon="keyboard" href="/reference/other-topics/keyboard-shortcuts">
+    Every task action from the keyboard.
+  </Card>
+</CardGroup>

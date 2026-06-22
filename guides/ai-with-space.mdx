@@ -1,13 +1,12 @@
 ---
 title: "Using AI with Space"
-description: "Connect your AI tools to Space with MCP"
+description: "Connect Space to your AI tools with MCP"
 ---
 
-Space for Mac has a built-in MCP server that lets you integrate Space with agentic AI tools. MCP (Model Context Protocol) is 
-emerging as the standard way to connect apps to AI agents, and it is easy to set up. The video below shows you how you can connect
-Space to OpenAI Codex and Craft Agents, and setup for other agentic tools will be very similar.
-
-## Video walkthrough
+Space for Mac has a built-in **MCP server**, so you can connect it to agentic AI tools like Claude Code,
+OpenAI Codex, or Craft Agents. Once connected, your AI can **read** your Space data and — if you allow
+it — **write** to Space too: creating tasks, building a plan, scheduling work. Watch below, or read the
+written steps that follow.
 
 <Frame caption="Getting started with AI in Space">
 <iframe
@@ -21,14 +20,54 @@ Space to OpenAI Codex and Craft Agents, and setup for other agentic tools will b
 ></iframe>
 </Frame>
 
----
+<Info>
+  The MCP server runs on **Mac** only.
+</Info>
 
-<Card
-  title="Learn more about AI in Space"
-  icon="bookmark"
-  href="/reference/ai-with-mcp"
-  arrow="true"
-  cta="Open the Reference"
->
-  Get all the details on AI in Space with MCP.
-</Card>
+## Turn on the MCP server
+
+Open **Settings → AI** and toggle the **MCP server** on. There are two modes:
+
+- **Read-only** — your AI can see your data but not change it. The safe default.
+- **Read and write** — the full experience: your AI can create and update tasks and plans. Switch to
+  this when you're ready.
+
+## Connect your AI tool
+
+<Steps>
+  <Step title="Grab the command for your tool">
+    The [Connect to AI Agents](/reference/ai-with-mcp) reference has a ready-made command for each tool
+    (Claude Code, OpenAI Codex, and others). Copy the one for yours.
+  </Step>
+  <Step title="Run it and pair">
+    Paste the command into your terminal. A browser window opens asking for a **pairing code**. Find the
+    code in **Settings → AI**, just below the endpoint, copy it in, and authorise.
+  </Step>
+  <Step title="Confirm the connection">
+    Back in **Settings → AI**, your tool now shows as a connected client. You can disconnect it any time
+    — that instantly revokes its access — or toggle the server off entirely to stop all connections.
+  </Step>
+</Steps>
+
+## Put it to work
+
+In your AI tool, check that Space is connected (in Codex, `/mcp` lists Space and its tools). Then just
+ask in plain language. For example:
+
+> Create a long-term plan in Space for 2026. Add three groups — health, wealth, wise — and a few goals
+> in each.
+
+The AI works out which Space tools to call and builds the plan, groups, and goals for you. Beyond
+long-term plans, it can help plan your week or day, read your existing plans and calendar, and schedule
+tasks — most of what you can do in Space, it can do for you.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Connect to AI Agents" icon="robot" href="/reference/ai-with-mcp">
+    Per-tool setup commands and the full tool list.
+  </Card>
+  <Card title="Export as Markdown" icon="file-export" href="/reference/markdown-export">
+    Hand a plan to an AI as text, no setup needed.
+  </Card>
+</CardGroup>

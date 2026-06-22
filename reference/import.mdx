@@ -1,0 +1,80 @@
+---
+title: Import from Other Apps
+description: Bring your tasks into Space from Apple Reminders, Todoist, and Things
+---
+
+Switching to Space? You can bring your existing tasks with you. Space imports from **Apple Reminders**,
+**Todoist**, and **Things 3**.
+
+<Info>
+  Importing is part of the **Manage Data** window on Mac — open the **Space** menu, choose **Manage
+  Data**, then the **Import** tab.
+</Info>
+
+<Warning>
+  Importing only **adds** to Space — nothing already in Space is changed or removed. If you import
+  twice, you'll get duplicates (tags with the same name are merged). After fetching your data, Space
+  shows you a list so you can choose exactly what to bring in.
+</Warning>
+
+<Frame caption="Import from Apple Reminders, Todoist, or Things">
+  <img src="/images/manage-data/import.png" alt="The Import tab with sections for Apple Reminders, Todoist, and Things" />
+</Frame>
+
+## Apple Reminders
+
+Click `Import from Reminders`. The first time, macOS asks for permission to read your reminders — Space
+only asks at the moment you import, never before.
+
+Each reminder list becomes a project, and your reminders become tasks, keeping their completion, due
+dates, and priority.
+
+<Info>
+  Apple's Reminders system doesn't let other apps read sub-tasks, tags, or sections, so reminders come
+  in as a flat list. Repeating reminders are imported as a single task.
+</Info>
+
+## Todoist
+
+Todoist needs an API token so Space can read your data. In Todoist, go to `Settings` > `Integrations` >
+`Developer` and copy your API token, then paste it into Space and click `Import`.
+
+Your projects, sections (as headings), tasks, and labels (as tags) come across, along with due dates and
+priority.
+
+<Info>
+  Imports your active tasks. Completed tasks, comments, and reminders aren't included. Sub-tasks and
+  nested projects are flattened into their project, and repeating tasks come in as a single task with
+  the schedule noted.
+</Info>
+
+## Things
+
+Click `Choose Things Database…`. Because Things keeps your data inside its own private folder, you'll
+point Space at the Things database file so it can read it. Space starts the file picker near where
+Things stores it.
+
+Your areas, projects, headings, to-dos, and tags come across, and checklist items are kept as a
+checklist inside the task's notes.
+
+<Info>
+  Items in the Trash and repeating-task rules aren't imported (repeating to-dos come in as their next
+  single task).
+</Info>
+
+## Availability
+
+<Warning>
+  Importing is a **Mac** feature, part of the Manage Data window.
+</Warning>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Manage Data" icon="database" href="/reference/manage-data">
+    Backup, restore, and delete your Space data.
+  </Card>
+  <Card title="Move your data in and out" icon="right-left" href="/how-to/move-your-data-in-and-out">
+    A recipe for importing, backing up, and exporting.
+  </Card>
+</CardGroup>

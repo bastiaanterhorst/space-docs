@@ -1,6 +1,6 @@
 ---
 title: Calendar
-description: Reference guide for calendar integration in Space
+description: How Space works with the calendars on your Mac and iPhone
 ---
 
 <Card
@@ -10,33 +10,73 @@ description: Reference guide for calendar integration in Space
   arrow="true"
   cta="Open the Walkthrough"
 >
-  Get introduced to to calendars and time blocking in Space.
+  Get introduced to calendars and time blocking in Space.
 </Card>
 
-## Calendar on Day and Week screens
+## Connecting your calendars
 
+Space uses the calendar accounts already set up on your Mac and iPhone. Because it reads from your
+device's native calendar, practically every calendar works — **iCloud, Google, Microsoft Outlook
+(Exchange), Yahoo, Proton, AOL, and any CalDAV calendar**.
 
-On the day and week screens, Space offers a basic calendar that syncs with Google Calendar and Microsoft Outlook.
+The first time, Space asks permission to use your calendars — choose **Allow Full Access**. Then click
+the **+** to add any calendar on your device.
+
+<Info>
+  Calendars come from the accounts in your device's system settings — on Mac, **System Settings →
+  Internet Accounts**; on iPhone, **Settings → Apps → Calendar → Accounts**. Any account there with
+  calendars enabled shows up in Space automatically; there's no separate sign-in inside Space.
+</Info>
+
+### Where events go
+
+One calendar is your **default** — new events and scheduled tasks go there. Change it in your calendar
+settings. An [area](/reference/projects-areas) can also have its own default calendar, so tasks you
+schedule from that area land on a specific calendar, shown in its own colour.
+
+### Private events on Google
+
+Events Space adds to your calendar are marked **private**, so anyone with access sees only "Busy". For
+**Google** calendars, connect your Google account in Space settings (**Connect Google account**) to
+enable this — the standard Apple connection can't mark Google events private on its own.
+
+## Calendar on the Day and Week screens
+
+On the day and week screens, Space shows your events right alongside your tasks, so your meetings and
+your planned work live in one view.
 
 <Frame caption="Events">
-  <img src="/images/tasks/calendar-events.png" />
+  <img src="/images/tasks/calendar-events.png" alt="Calendar events shown next to tasks on the day and week screens" />
 </Frame>
 
 You can create and edit events, as well as accept or decline invitations, without leaving Space.
-You can also join video calls, either by opening the event and clicking the "Join Video Call" button,
-or by hovering over the event and pressing <kbd>Cmd</kbd> + <kbd>J</kbd>.
+You can also join video calls, either by opening the event and clicking the **Join Video Call** button,
+or, on Mac, by hovering over the event and pressing <kbd>Cmd</kbd> + <kbd>J</kbd>.
 
 <Frame caption="Edit events and join calls right from Space">
-  <img src="/images/tasks/calendar-event.png" />
+  <img src="/images/tasks/calendar-event.png" alt="An event open in Space with options to edit it and join a video call" />
 </Frame>
 
 ## Tasks on your calendar
 
-You can drag tasks onto your calendar. This creates an event which is linked to your task.
-The event syncs to your calendar so others with access to your calendar can also see it.
-The event is marked 'private', so they only see "Busy", rather than the full name and notes for your task.
+You can drag tasks onto your calendar. This creates an event which is linked to your task — a *time
+block*. The event syncs to your calendar, so others with access to your calendar can also see it. The
+event is marked **private**, so they only see "Busy", rather than the full name and notes for your task.
 
 <Frame caption="A task on your calendar">
-  <img src="/images/tasks/calendar-task.png" />
+  <img src="/images/tasks/calendar-task.png" alt="A task dragged onto the calendar, shown as a linked time block" />
 </Frame>
 
+Space can also place a task for you automatically, finding an opening that respects your working hours
+and existing commitments — see [Auto-schedule](/reference/auto-schedule).
+
+## Availability
+
+Calendars work on both **Mac** and **iPhone**. Joining a video call with <kbd>Cmd</kbd> + <kbd>J</kbd>
+is a Mac shortcut; on iPhone, open the event and tap **Join Video Call**.
+
+## Related
+
+<Card title="Calendars and time blocking" icon="video" href="/guides/scheduling-tasks" cta="Open the guide">
+  A visual walkthrough of connecting calendars and blocking time.
+</Card>

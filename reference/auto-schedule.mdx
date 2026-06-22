@@ -1,0 +1,47 @@
+---
+title: Auto-schedule
+description: Let Space find an opening on your calendar for a task
+---
+
+Auto-scheduling places a task on your [calendar](/reference/calendar) for you, finding a free slot that
+respects your working hours and the commitments you already have.
+
+## Find time on a calendar
+
+Select a task and press <kbd>Cmd</kbd> + <kbd>F</kbd>, or right-click it and choose **Find time on
+calendar**. Space looks at your calendar, skips over existing events, stays inside your working hours,
+and creates a time block in the first opening that fits. The event is linked to the task, just like
+dragging a task onto the calendar yourself. The block uses your **default event duration** — 30 minutes
+unless you change it.
+
+<Frame caption="Finding an opening for a task">
+  <img src="/images/auto-schedule/find-opening.png" alt="A task being auto-scheduled into a free slot on the calendar" />
+</Frame>
+
+## Working hours
+
+Auto-scheduling only places tasks within your **working hours**, so it never books your evenings or
+weekends unless you tell it to. Set your working hours and default event duration in
+**Settings → Calendar**. See [Settings](/reference/settings).
+
+## Used by repeating tasks
+
+[Repeating tasks](/reference/repeating-tasks) can auto-schedule each occurrence, finding a fresh opening
+every time instead of using a fixed time.
+
+## Availability
+
+<Warning>
+  Auto-scheduling (<kbd>Cmd</kbd> + <kbd>F</kbd>) is a **Mac** feature.
+</Warning>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Calendar" icon="calendar" href="/reference/calendar">
+    Events and time blocks in Space.
+  </Card>
+  <Card title="Settings" icon="gear" href="/reference/settings">
+    Set your working hours.
+  </Card>
+</CardGroup>

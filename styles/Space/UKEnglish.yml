@@ -1,0 +1,32 @@
+extends: substitution
+message: "Use UK spelling: '%s' → '%s'."
+level: warning
+ignorecase: true
+# Note: 'color'/'center' are deliberately omitted — they collide with component
+# props (e.g. <Badge color="...">) and CSS. Check those by eye.
+swap:
+  organize: organise
+  organized: organised
+  organizing: organising
+  organization: organisation
+  prioritize: prioritise
+  prioritized: prioritised
+  prioritizing: prioritising
+  favorite: favourite
+  favorites: favourites
+  realize: realise
+  realized: realised
+  behavior: behaviour
+  behaviors: behaviours
+  categorize: categorise
+  categorized: categorised
+  customize: customise
+  customizing: customising
+  optimize: optimise
+  summarize: summarise
+  recognize: recognise
+  analyze: analyse
+  fulfill: fulfil
+  canceled: cancelled
+  canceling: cancelling
+  traveling: travelling
