@@ -1,0 +1,129 @@
+---
+title: Manage Data
+description: Back up, restore, import, and erase your Space data
+---
+
+Space keeps your data safe and portable. From one place you can make a backup, restore something you lost, bring in tasks from other apps, or wipe the slate clean.
+
+<Info>Manage Data is a feature of the **Mac** version of Space. To open it, click the `Space` menu in the menu bar and choose `Manage Data`.</Info>
+
+The window has four tabs — **Backup**, **Restore**, **Import**, and **Delete All** — described below.
+
+## Back up your data
+
+A backup is a single file that contains a complete, portable copy of your Space data — your areas, projects, tasks, tags, repeating tasks, and your planning. It does **not** include app settings or your calendar connections, which are specific to each device.
+
+<Info>Your backups stay on your Mac, in a folder that only Space can write to. Nothing is uploaded anywhere — it's your data, on your machine.</Info>
+
+### Automatic backups
+
+Space can back up for you automatically, once a week. This is turned on by default. You'll see when the most recent automatic backup was made, so you always know you're covered.
+
+You can turn this off, but it's a handy safety net — leave it on unless you have a reason not to.
+
+<Frame caption="Automatic and manual backups">
+  <img src="/images/manage-data/backup.png" alt="The Backup tab showing the weekly automatic backup toggle and the Create Backup button" />
+</Frame>
+
+### Create a backup yourself
+
+To make a backup on the spot, click `Create Backup`. Space saves the file and reveals it in Finder so you can see exactly where it landed.
+
+To find your backups again later, click `Show Backups Folder`. This opens the folder in Finder, where both your automatic and manual backups live. From there you can copy a backup somewhere extra safe — an external drive, a USB stick, or your favorite cloud storage.
+
+<Info>It's a good idea to keep a recent backup somewhere other than your Mac. That way you're covered even if something happens to the computer itself.</Info>
+
+## Restore from a backup
+
+Restoring brings data back from a backup file.
+
+<Warning>
+  Restoring only ever **adds** to Space. It never changes or removes anything you already have. The worst case is a duplicate — never lost data.
+</Warning>
+
+The Restore tab lists the backups already in your backups folder, newest first. Each one shows whether it was made automatically or manually. Click `Restore…` next to the backup you want, or `Show` to reveal it in Finder.
+
+If your backup lives somewhere else — say you copied it from another Mac or restored it from Time Machine — click `Open Backup File…` and pick the file.
+
+<Frame caption="Choosing a backup to restore">
+  <img src="/images/manage-data/restore.png" alt="The Restore tab listing available backups with Restore and Show buttons" />
+</Frame>
+
+### Choose what to restore
+
+After you pick a backup, Space shows you what's inside and lets you choose exactly what to bring back. You might restore a single project you deleted by accident, or everything at once.
+
+You can pick any combination of:
+
+- **Areas** — selecting an area brings along its projects, tasks, and plans
+- **Projects and Plans** — top-level projects and their long-term plans
+- **Loose Tasks** — tasks that aren't in any project or area
+- **Planning Notes** — notes from your weekly and daily planning
+- **Repeating Tasks** — your recurring task definitions
+
+<Frame caption="Choose exactly what to restore">
+  <img src="/images/manage-data/restore-picker.png" alt="The Choose What to Restore sheet with checkboxes for areas, projects, loose tasks, planning notes, and repeating tasks" />
+</Frame>
+
+A couple of things worth knowing:
+
+- Tags with the same name are merged, so restoring won't leave you with duplicate tags.
+- If you restore **Repeating Tasks**, Space recreates the series and picks up generating future tasks again. If you leave them out, any repeating tasks in the backup come back as ordinary one-off tasks instead.
+
+Click `Restore` and your selection is added to Space.
+
+## Import from other apps
+
+Switching to Space from another app? The Import tab brings your tasks across from **Apple Reminders**, **Todoist**, and **Things 3**.
+
+<Warning>
+  Like restoring, importing only **adds** to Space — nothing already in Space is changed or removed. If you import twice, you'll get duplicates (tags with the same name are still merged). After fetching your data, Space shows you a list so you can choose exactly what to bring in.
+</Warning>
+
+<Frame caption="Import from Apple Reminders, Todoist, or Things">
+  <img src="/images/manage-data/import.png" alt="The Import tab with sections for Apple Reminders, Todoist, and Things" />
+</Frame>
+
+### Apple Reminders
+
+Click `Import from Reminders`. The first time, macOS asks for permission to read your reminders — Space only asks at the moment you import, never before.
+
+Each reminder list becomes a project, and your reminders become tasks, keeping their completion, due dates, and priority.
+
+<Info>
+  Apple's Reminders system doesn't let other apps read sub-tasks, tags, or sections, so reminders come in as a flat list. Repeating reminders are imported as a single task.
+</Info>
+
+### Todoist
+
+Todoist needs an API token so Space can read your data. In Todoist, go to `Settings` > `Integrations` > `Developer` and copy your API token, then paste it into Space and click `Import`.
+
+Your projects, sections (as headings), tasks, and labels (as tags) come across, along with due dates and priority.
+
+<Info>
+  Imports your active tasks. Completed tasks, comments, and reminders aren't included. Sub-tasks and nested projects are flattened into their project, and repeating tasks come in as a single task with the schedule noted.
+</Info>
+
+### Things
+
+Click `Choose Things Database…`. Because Things keeps your data inside its own private folder, you'll point Space at the Things database file so it can read it. Space starts the file picker near where Things stores it.
+
+Your areas, projects, headings, to-dos, and tags come across, and checklist items are kept as a checklist inside the task's notes.
+
+<Info>
+  Items in the Trash and repeating-task rules aren't imported (repeating to-dos come in as their next single task).
+</Info>
+
+## Delete all data
+
+The Delete All tab erases everything in Space on this Mac.
+
+<Warning>
+  This permanently deletes all of your tasks, projects, areas, tags, and planning data. Because Space syncs through iCloud, the deletion also reaches your other devices. This can't be undone — **make a backup first**.
+</Warning>
+
+To go ahead, click `Delete All Data…`, type `DELETE` to confirm, and click `Delete Everything`. Your app settings are left untouched.
+
+<Frame caption="Deleting all data takes a typed confirmation">
+  <img src="/images/manage-data/delete.png" alt="The Delete All tab with a confirmation dialog asking you to type DELETE" />
+</Frame>
