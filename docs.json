@@ -145,5 +145,15 @@
         ]
       }
     ]
-  }
+  },
+  "redirects": [
+    {
+      "source": "/reference/planning/planning-settings",
+      "destination": "/reference/planning/weekly-daily-planning"
+    },
+    {
+      "source": "/how-to/set-up-your-calendar",
+      "destination": "/guides/scheduling-tasks"
+    }
+  ]
 }
