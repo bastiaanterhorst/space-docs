@@ -1,23 +1,23 @@
 ---
 title: "Connect to AI Agents"
-description: "Connect your AI tools to Space with MCP"
+description: "Connect your AI tools to Sonto with MCP"
 ---
 
 <Card
-  title="Check out a video walkthrough showing AI with Space"
+  title="Check out a video walkthrough showing AI with Sonto"
   icon="video"
-  href="/guides/ai-with-space"
+  href="/guides/ai-with-sonto"
   arrow="true"
   cta="Open the Walkthrough"
 >
-  Get introduced to AI in Space.
+  Get introduced to AI in Sonto.
 </Card>
 
-If you use agentic AI tools like Claude, Codex, or Craft Agents, you can connect them to Space.
+If you use agentic AI tools like Claude, Codex, or Craft Agents, you can connect them to Sonto.
 
-Once connected, your AI tool can **read your Space data** (like your inbox, today, and your projects) and — if you allow it — **help you make changes** (like creating tasks or updating plans).
+Once connected, your AI tool can **read your Sonto data** (like your inbox, today, and your projects) and — if you allow it — **help you make changes** (like creating tasks or updating plans).
 
-The connection between Space and your AI tool is made using [MCP](https://modelcontextprotocol.io/docs/getting-started/intro), an emerging standard that many agentic tools support. Getting started is easy.
+The connection between Sonto and your AI tool is made using [MCP](https://modelcontextprotocol.io/docs/getting-started/intro), an emerging standard that many agentic tools support. Getting started is easy.
 
 So what can you do?
 
@@ -28,18 +28,18 @@ So what can you do?
 
 Some prompts to get you started:
 
-- “What does today look like in Space? Include events.”
+- “What does today look like in Sonto? Include events.”
 - “Open my current week and highlight anything overdue.”
-- “Get my action items from these meeting notes and add them to the Summer Promo project in Space.”
+- “Get my action items from these meeting notes and add them to the Summer Promo project in Sonto.”
 
 ---
 
 
-## Enable MCP in Space
+## Enable MCP in Sonto
 
-<Info>MCP support is included in the **Mac** version of Space.</Info>
+<Info>MCP support is included in the **Mac** version of Sonto.</Info>
 
-In Space:
+In Sonto:
 
 1. Open `Settings`.
 2. Go to `AI`.
@@ -63,11 +63,11 @@ Pick this when you want safe visibility from your AI tool.
 #### Read & Write
 
 <Warning>
-  Read &amp; Write lets your AI tool make changes in Space — including deleting data.
+  Read &amp; Write lets your AI tool make changes in Sonto — including deleting data.
   Start with Read Only, and only switch to Read &amp; Write once you trust your tool setup.
 </Warning>
 
-Pick this when you want the AI to actively manage your Space data.
+Pick this when you want the AI to actively manage your Sonto data.
 
 - Includes all read tools.
 - Adds write tools for task/project/area/group/plan management.
@@ -77,14 +77,14 @@ Pick this when you want the AI to actively manage your Space data.
 
 ---
 
-## Connect an AI tool to Space
+## Connect an AI tool to Sonto
 
 ### Tools that support MCPB files (like Claude Desktop)
 
-The easiest way to connect Space to your AI tool is using an MCP Bundle (an .mcpb file). This works in Claude Desktop.
+The easiest way to connect Sonto to your AI tool is using an MCP Bundle (an .mcpb file). This works in Claude Desktop.
 
-Open `Settings` and the `AI` tab. Under MCPB, click `Reveal in Finder` and double-click the `Space.mcpb` file. 
-In your AI tool you'll enter the pairing code shown in Space Settings, and you're done. 
+Open `Settings` and the `AI` tab. Under MCPB, click `Reveal in Finder` and double-click the `Sonto.mcpb` file. 
+In your AI tool you'll enter the pairing code shown in Sonto Settings, and you're done. 
 
 <Frame caption="Connecting to Claude Desktop">
 <iframe
@@ -102,11 +102,11 @@ In your AI tool you'll enter the pairing code shown in Space Settings, and you'r
 
 In `Settings > AI`, copy the `Endpoint` shown in the `Authenticate` section (for example: `http://127.0.0.1:2402/`).
 
-Space MCP listens on localhost (`127.0.0.1`) and uses HTTP transport with OAuth.
-During OAuth you’ll be asked for a time-based pairing code that Space shows in the same Settings screen.
+Sonto MCP listens on localhost (`127.0.0.1`) and uses HTTP transport with OAuth.
+During OAuth you’ll be asked for a time-based pairing code that Sonto shows in the same Settings screen.
 
 <Frame caption="Time-based pairing code">
-  <img src="/images/mcp/pairing.png" alt="Time-based pairing code shown in Space settings" />
+  <img src="/images/mcp/pairing.png" alt="Time-based pairing code shown in Sonto settings" />
 </Frame>
 
 ### Connecting to Claude Code CLI
@@ -114,19 +114,19 @@ During OAuth you’ll be asked for a time-based pairing code that Space shows in
 Run:
 
 ```bash
-claude mcp add --transport http space http://127.0.0.1:2402/
+claude mcp add --transport http sonto http://127.0.0.1:2402/
 ```
 
 Then:
 
 1. Start Claude Code: `claude`
 2. Run `/mcp`
-3. Select `space` (it will show as unauthenticated)
+3. Select `sonto` (it will show as unauthenticated)
 4. Confirm authentication
 5. Enter the pairing code when your browser opens
 
-<Frame caption="Claude inspecting Space MCP">
-  <img src="/images/mcp/claude.png" alt="Claude Code showing Space MCP connection" />
+<Frame caption="Claude inspecting Sonto MCP">
+  <img src="/images/mcp/claude.png" alt="Claude Code showing Sonto MCP connection" />
 </Frame>
 
 ### Connecting to OpenAI Codex CLI
@@ -134,11 +134,11 @@ Then:
 Run:
 
 ```bash
-codex mcp add Space --url http://127.0.0.1:2402/
+codex mcp add Sonto --url http://127.0.0.1:2402/
 ```
 
 A browser window should open asking you for the pairing code.
-Get it from Space (`Settings > AI`).
+Get it from Sonto (`Settings > AI`).
 
 <Info>The Codex Desktop app will automatically pick this registration up as well.</Info>
 
@@ -146,7 +146,7 @@ Get it from Space (`Settings > AI`).
 
 1. Open `Settings` → `MCP Servers`
 2. Click `+ Add server`
-3. Give the server a name (for example: `Space`)
+3. Give the server a name (for example: `Sonto`)
 4. Select `Streamable HTTP` as the transport
 5. Enter `http://127.0.0.1:2402/` as the URL
 
@@ -155,7 +155,7 @@ Get it from Space (`Settings > AI`).
 </Frame>
 
 Click `Save`. An `Authenticate` button will appear next to the server.
-Click it and enter the pairing code from Space (`Settings > AI`).
+Click it and enter the pairing code from Sonto (`Settings > AI`).
 
 <Frame caption="Codex Desktop">
   <img src="/images/mcp/codex-ui-2.png" alt="Authenticating an MCP server in Codex Desktop" />
@@ -165,15 +165,15 @@ Click it and enter the pairing code from Space (`Settings > AI`).
 
 1. In Craft Agents, go to `Sources` → `MCPs`
 2. Click `+`
-3. When asked what to connect, enter “Connect to 'Space Life Planner', an MCP server at http://127.0.0.1:2402/”
+3. When asked what to connect, enter “Connect to 'Sonto', an MCP server at http://127.0.0.1:2402/”
 4. Wait a bit, then allow opening the OAuth screen
-5. Enter the pairing code from Space (`Settings > AI`)
+5. Enter the pairing code from Sonto (`Settings > AI`)
 
 ---
 
 ## Connected clients
 
-Space shows all connected clients in `Settings` > `AI`. You can disconnect a clients to immediately revoke access.
+Sonto shows all connected clients in `Settings` > `AI`. You can disconnect a clients to immediately revoke access.
 
 ---
 
@@ -215,11 +215,11 @@ Long-term planning (yearly and quarterly plans):
 
 ## Prompts and resources (optional)
 
-You can use Space with tools only. Prompts and resources are optional, but useful in clients that support them.
+You can use Sonto with tools only. Prompts and resources are optional, but useful in clients that support them.
 
 ### Prompts
 
-Prompts are pre-packaged workflows: Space bundles the right data plus a strong instruction template.
+Prompts are pre-packaged workflows: Sonto bundles the right data plus a strong instruction template.
 
 Prompt families:
 
@@ -234,12 +234,12 @@ Resources are read-only snapshots that some MCP clients can preload before gener
 
 Examples:
 
-- `space://context/today`
-- `space://context/this_week`
-- `space://context/day/{date}`
-- `space://context/week/{year}/{week}`
-- `space://plans/active`
-- `space://projects/{project_id}/summary`
+- `sonto://context/today`
+- `sonto://context/this_week`
+- `sonto://context/day/{date}`
+- `sonto://context/week/{year}/{week}`
+- `sonto://plans/active`
+- `sonto://projects/{project_id}/summary`
 
 If your client does not support resources, you can ignore them and call tools directly (`get_day`, `get_week`, `get_day_events`, etc.).
 
@@ -247,11 +247,11 @@ If your client does not support resources, you can ignore them and call tools di
 
 ## Important behaviour notes
 
-- Space must be running to use it with your AI tools.
+- Sonto must be running to use it with your AI tools.
 - `day_iso` values are local calendar day semantics (`YYYY-MM-DD`) in the current system timezone.
 - Week inputs use ISO week semantics (`week` + `year`).
 - `get_day_events` uses the same visible-calendar pipeline as the in-app calendar.
-- Tools that offer `include_late` / `include_late_day` filtering fall back to Space preferences when omitted.
+- Tools that offer `include_late` / `include_late_day` filtering fall back to Sonto preferences when omitted.
 - `sort_tasks` follows your rollover preference for day/week late-task visibility. Sorting a day or week also normalizes visible late tasks to that day/week.
 - Group `intensity` is a score from `0` to `10`; use `null` in `edit_group` to disable group intensity scoring. Group intensity is primarily used for yearly and quarterly plans.
-- IDs such as `project_id`, `area_id`, `group_id`, and `plan_id` are opaque tokens returned by Space.
+- IDs such as `project_id`, `area_id`, `group_id`, and `plan_id` are opaque tokens returned by Sonto.

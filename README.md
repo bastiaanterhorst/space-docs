@@ -1,8 +1,8 @@
-# Space documentation
+# Sonto documentation
 
-The help centre for the [Space](https://findspace.app) app for Mac and iOS, published with
+The help centre for the [Sonto](https://sonto.app) app for Mac and iOS, published with
 [Mintlify](https://mintlify.com) from this repository. Live at
-[help.findspace.app](https://help.findspace.app).
+[help.sonto.app](https://help.sonto.app).
 
 ## Structure
 
@@ -11,7 +11,7 @@ doing one job:
 
 | Group | Quadrant | Purpose |
 |---|---|---|
-| **Start here** | — | Welcome, the Space Method, What's New. |
+| **Start here** | — | Welcome, the Sonto Method, What's New. |
 | **Concepts** | Explanation | The ideas behind the app — the *why*. |
 | **Tutorials** | Tutorial | Learning-oriented, hand-held walkthroughs (the video guides + their text). |
 | **How-to guides** | How-to | Goal-oriented recipes for a specific task. |
@@ -29,7 +29,7 @@ mint broken-links   # check every internal link and image resolves
 ## Quality checks before publishing
 
 - `mint broken-links` — no broken links or missing images.
-- `vale .` — prose lint: UK English and on-brand vocabulary (see `.vale.ini` and `styles/Space/`).
+- `vale .` — prose lint: UK English and on-brand vocabulary (see `.vale.ini` and `styles/Sonto/`).
 - Every image has `alt` text; every reference page ends with a **Related** section.
 
 See `CLAUDE.md` for the full authoring standards (voice, the reference template, platform-availability

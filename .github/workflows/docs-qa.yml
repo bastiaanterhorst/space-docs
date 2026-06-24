@@ -29,7 +29,7 @@ jobs:
       - uses: errata-ai/vale-action@reviewdog
         with:
           files: .
-          fail_on_error: false # informational until the Space styles are tuned
+          fail_on_error: false # informational until the Sonto styles are tuned
 
   links:
     name: Broken links & images

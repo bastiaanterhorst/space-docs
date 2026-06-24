@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
-  "name": "Space: A Planning Method for Mac and iOS",
+  "name": "Sonto: A Planning Method for Mac and iOS",
   "colors": {
     "primary": "#7A65FD",
     "light": "#7A65FD",
@@ -15,7 +15,7 @@
     "groups": [
       {
         "group": "Start here",
-        "pages": ["index", "space-method", "whats-new"]
+        "pages": ["index", "sonto-method", "whats-new"]
       },
       {
         "group": "Concepts",
@@ -32,7 +32,7 @@
           "guides/repeating-tasks",
           "guides/tags",
           "how-to/capture-from-anywhere",
-          "guides/ai-with-space",
+          "guides/ai-with-sonto",
           "how-to/move-your-data-in-and-out"
         ]
       },
@@ -106,18 +106,23 @@
         "group": "Legal",
         "hidden": true,
         "pages": ["terms"]
+      },
+      {
+        "group": "About",
+        "hidden": true,
+        "pages": ["why-sonto"]
       }
     ],
     "global": {
       "anchors": [
         {
           "anchor": "Website",
-          "href": "https://findspace.app",
+          "href": "https://sonto.app",
           "icon": "globe"
         },
         {
           "anchor": "Support",
-          "href": "mailto:support@findspace.app",
+          "href": "mailto:support@sonto.app",
           "icon": "headset"
         }
       ]
@@ -129,19 +134,19 @@
   },
 
   "banner": {
-    "content": "[Download Space on the App Store](https://apps.apple.com/us/app/space-life-planner/id6502294348)"
+    "content": "[Download Sonto on the App Store](https://apps.apple.com/us/app/sonto/id6502294348)"
   },
   "footer": {
     "links": [
       {
         "items": [
           {
-            "label": "Space Website",
-            "href": "https://findspace.app"
+            "label": "Sonto Website",
+            "href": "https://sonto.app"
           },
           {
             "label": "Terms & Privacy",
-            "href": "https://help.findspace.app/terms"
+            "href": "https://help.sonto.app/terms"
           }
         ]
       }
@@ -155,6 +160,14 @@
     {
       "source": "/how-to/set-up-your-calendar",
       "destination": "/guides/scheduling-tasks"
+    },
+    {
+      "source": "/space-method",
+      "destination": "/sonto-method"
+    },
+    {
+      "source": "/guides/ai-with-space",
+      "destination": "/guides/ai-with-sonto"
     }
   ]
 }
