@@ -43,6 +43,7 @@
             "group": "Tasks & organisation",
             "pages": [
               "reference/tasks",
+              "reference/natural-language-input",
               "reference/screens",
               "reference/projects-areas",
               "reference/tags",
