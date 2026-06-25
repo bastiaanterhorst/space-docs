@@ -10,6 +10,11 @@
   "fonts": {
     "family": "IBM Plex Sans"
   },
+  "seo": {
+    "metatags": {
+      "canonical": "https://help.sonto.app"
+    }
+  },
   "favicon": "/favicon.png",
   "navigation": {
     "groups": [
@@ -63,10 +68,7 @@
           },
           {
             "group": "Calendar & scheduling",
-            "pages": [
-              "reference/calendar",
-              "reference/auto-schedule"
-            ]
+            "pages": ["reference/calendar", "reference/auto-schedule"]
           },
           "reference/ai-with-mcp",
           {
