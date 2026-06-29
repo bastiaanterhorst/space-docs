@@ -57,7 +57,7 @@ Availability → Related**. Model on `reference/manage-data.mdx`, `reference/ai-
 Use `<Tabs>` ("Mac" / "iPhone & iPad") where steps diverge. Where iPhone genuinely lacks a feature —
 the guided planning flow, global hotkeys, the MCP server — state it with an Availability `<Warning>`.
 Never write steps for a flow a platform doesn't have. Source of truth for capabilities:
-`../space-content/docs/space-capabilities.md`.
+`../space-content/docs/sonto-capabilities.md`.
 
 ## Git workflow
 - NEVER use --no-verify when committing
