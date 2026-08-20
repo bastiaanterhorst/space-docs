@@ -15,14 +15,26 @@ tool set.
 
 ## Install
 
-The tool is bundled inside the app. To run it as `sonto` from anywhere, link it onto your `PATH`. Open a terminal and type:
+The tool is bundled inside the app, as `sontocli`. To run it as `sonto` from anywhere, link it onto
+your `PATH`. Open a terminal and type:
 
 ```bash
-ln -s "/Applications/Sonto.app/Contents/MacOS/sonto" /usr/local/bin/sonto
+ln -s "/Applications/Sonto.app/Contents/MacOS/sontocli" /usr/local/bin/sonto
 ```
 
+<Warning>
+  **The path changed in Sonto 2.0.** The bundled tool used to be called `sonto`, which clashed with
+  the app's own binary on a case-insensitive disk. If you linked it before 2.0, remove the old link
+  and run the command above again:
+
+  ```bash
+  rm /usr/local/bin/sonto
+  ```
+</Warning>
+
 <Tip>
-  The exact path is shown in **Settings → AI → Advanced → CLI**, with a **Copy** button.
+  The exact path is shown in **Settings → AI → Use the CLI or connect to other AI Agents**, as
+  `CLI Path`, with a **Copy** button.
 </Tip>
 
 Check the connection:
