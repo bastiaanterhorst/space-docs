@@ -3,55 +3,120 @@ title: Settings
 description: What you can configure in Sonto, and where to find it
 ---
 
-This page is a map of what you can adjust in Sonto. Open Settings from the **Sonto** menu on Mac, or the
-settings entry on iPhone. Settings are specific to each device — they don't sync.
+This page is a map of what you can adjust in Sonto. Settings are specific to each device — they don't
+sync, so a change you make on your Mac won't follow you to your iPhone.
+
+## Where it lives
+
+- **Mac** — open the `Sonto` menu and choose `Settings…`, or press <kbd>Cmd</kbd> + <kbd>,</kbd>.
+  Settings open in their own window, with a sidebar listing the panes below and back and forward
+  buttons for the pages that nest inside them.
+- **iPhone & iPad** — tap the settings entry, and pick a section from the list. The sections are the
+  same, minus **AI**, and **About** is called **Help**.
 
 ## General
 
-- **Sync status** — see whether iCloud sync is healthy, in progress, or stalled. See
-  [Sync](/reference/sync).
-- App appearance, including dark mode (which can follow your system setting).
+Sonto's overall look and feel.
+
+- **Appearance** — light, dark, or follow your system setting.
+- **Text size** — make everything in Sonto smaller or larger, independently of your system setting.
+  See [Text size](/reference/accessibility#text-size).
+- **App icon** — choose an alternative icon for your dock or Home Screen.
+- **Sidebar badges** — whether the sidebar counts your `Inbox`, `Today`, both, or neither.
+- **Sound effects** — the small sounds Sonto plays when you complete a task.
+- **Sync status** — whether iCloud sync is healthy, in progress, or stalled. See
+  [Sync](/reference/sync). On iPhone this sits at the top of the settings list rather than inside
+  General.
+
+Mac adds one more: **Dock icon when Sonto is running** — always, only in dark mode, or never.
 
 ## Tasks
 
-- **Global hotkeys** — two custom, system-wide hotkeys for adding a task to your inbox or to today,
-  even when Sonto is in the background. See [Quick capture](/reference/quick-capture).
+How tasks behave as you work through them.
 
-## Calendar
-
-- **Calendar access** — grant Sonto access to your device's calendars, and choose which to show. See
-  [Calendar](/reference/calendar).
-- **Working hours** — the hours Sonto treats as available when it
-  [auto-schedules](/reference/auto-schedule) a task.
-- **Default event duration** — the length of a time block Sonto creates (30 minutes by default).
+- **Enable natural language dates** — whether Sonto reads dates, times, projects and tags out of a
+  task's name as you type. See [Natural language input](/reference/natural-language-input).
+- **Move overdue tasks to…** — where a task goes when its day passes: `Today`, `This week`, or nowhere.
+  See [Overdue tasks](/reference/overdue-tasks).
+- **Automatically clear completed…** — after 30, 60 or 90 days, or never. You can set this separately
+  for tasks in projects, tasks in areas, and other tasks.
+- **Global hotkeys** (Mac) — two system-wide hotkeys for adding a task to your inbox or to today, even
+  when Sonto is in the background. See [Quick capture](/reference/quick-capture).
 
 ## Planning
 
-- **Planning reminders** — when Sonto nudges you to plan your day and week, as both an in-app prompt and
-  a system notification. See [Notifications & Reminders](/reference/notifications).
+The rhythm of your planning sessions. See [Notifications & Reminders](/reference/notifications).
+
+- **Daily planning reminders** — when Sonto nudges you to plan, and on which days.
+- **Also plan weekend days** — whether Saturday and Sunday take part in daily planning.
+- **Quarterly planning reminder** — when to prompt you for the next quarter or year.
+- **Offer to continue planning** — whether Sonto suggests carrying on to the next step.
+- **Copy tasks when dragging in planning** — drag a task into a plan to copy it rather than move it.
+
+## Calendars
+
+Connecting Sonto to the calendars on your device. See [Calendar](/reference/calendar).
+
+- **Calendar access** — grant Sonto permission to read your calendars, and choose which ones to show.
+- **Accounts** — connect a Google account, or add others in your system settings.
+- **Default calendar** — where Sonto puts the events it creates.
+- **Hide task names on calendar events** — keep task names private on a shared calendar.
+
+## Scheduling
+
+How Sonto places work on your calendar.
+
+- **Working hours** — the hours Sonto treats as available when it
+  [auto-schedules](/reference/auto-schedule) a task, including for repeating tasks.
+- **Default event duration** — the length of a time block Sonto creates.
+- **First day of the week** — which day your week screen starts on.
+- **Calendar density** — how tightly the calendar packs its hours.
+
+## Tags
+
+Create, rename and delete your [tags](/reference/tags). Tags you remove here disappear from every task,
+project and area that carried them.
 
 ## AI
 
-- **MCP server** — connect AI tools to Sonto, with read-only or read-and-write access. See
-  [Connect to AI Agents](/reference/ai-with-mcp).
+- **AI Access** — the main switch for the MCP server. When off, no AI tool can reach Sonto, and the
+  `sonto` CLI stops working too.
+- **Allow changes** — off by default. Turn it on to let an AI tool create, edit and complete items.
+- **Install Claude Desktop Connector** — one-click setup for Claude Desktop.
+- **Use the CLI or connect to other AI Agents** — opens an **Advanced** page holding the `Endpoint`,
+  `Port`, pairing code, connected clients, and the `CLI Path` with a **Copy** button.
 
-## Backups
+See [Connect to AI Agents](/reference/ai-with-mcp) and the [Sonto CLI](/reference/sonto-cli).
 
-Automatic and manual backups live in the **Manage Data** window rather than Settings. See
-[Manage Data](/reference/manage-data).
+## About
+
+Your version and build number, open-source licences, and the terms and privacy policy. On iPhone this
+section is called **Help**.
+
+<Info>
+  Backups, restore, import and delete live in the **Backup & Import** window rather than Settings. See
+  [Backup & Import](/reference/manage-data).
+</Info>
 
 ## Availability
 
-Settings exist on both **Mac** and **iPhone**, but some options — global hotkeys, working hours, the MCP
-server, and Manage Data — are **Mac-only**.
+Settings exist on both **Mac** and **iPhone & iPad**. Two things are **Mac-only**: **global hotkeys**,
+and the whole **AI** pane — the MCP server and the CLI run on the Mac. **Backup & Import** is Mac-only too,
+and lives outside Settings.
 
 ## Related
 
 <CardGroup cols={2}>
+  <Card title="Accessibility" icon="universal-access" href="/reference/accessibility">
+    Text size, VoiceOver, and system accessibility settings.
+  </Card>
   <Card title="Keyboard shortcuts" icon="keyboard" href="/reference/other-topics/keyboard-shortcuts">
     Including how to configure global hotkeys.
   </Card>
-  <Card title="Manage Data" icon="database" href="/reference/manage-data">
+  <Card title="Backup & Import" icon="database" href="/reference/manage-data">
     Backups, restore, import, and delete.
+  </Card>
+  <Card title="Languages" icon="language" href="/reference/languages">
+    The languages Sonto speaks.
   </Card>
 </CardGroup>

@@ -45,8 +45,9 @@ Some prompts to get you started:
 - **Allow changes** — off by default (read-only). Turn it on to let AI create, edit and complete
   items. Toggling it restarts the server.
 
-The `Endpoint`, `Port` (default `2402`) and pairing code live under **Advanced**. You can change the
-port while AI Access is on; the server restarts when you do.
+The `Endpoint`, `Port` (default `2402`), pairing code and CLI path live one level down: click
+**Use the CLI or connect to other AI Agents** to open the **Advanced** page. You can change the port
+while AI Access is on; the server restarts when you do.
 
 ### Read-only vs allow changes
 
@@ -80,14 +81,21 @@ Pick this when you want the AI to actively manage your Sonto data.
 ## Connect an AI tool to Sonto
 
 <Info>
-  For the manual and CLI setups below, the **pairing code** is under **Settings → AI → Advanced**.
-  Claude Desktop (the first option) doesn't need one.
+  For the manual and CLI setups below, the **pairing code** is under **Settings → AI → Use the CLI or
+  connect to other AI Agents → Advanced**. Claude Desktop (the first option) doesn't need one.
 </Info>
 
 ### Claude Desktop (one click)
 
 Open `Settings` → `AI` and click **Install Claude Desktop Connector**. Claude Desktop opens and offers
-to install the connector — accept, and you're done.
+to install the connector — accept, and you're done. No pairing code, no config file.
+
+<Info>
+  **Improved in 2.0.** The connector Sonto installs is now a signed bundle pointing at the app's
+  bundled command-line tool. In 1.7 it could start a second copy of Sonto instead of the tool and hang
+  waiting for a reply. If you installed the connector before 2.0, remove it in Claude Desktop and click
+  the button again.
+</Info>
 
 <Tip>
   Prefer the terminal, or using Claude Code? The native [Sonto CLI](/reference/sonto-cli) is a lighter,
@@ -96,10 +104,12 @@ to install the connector — accept, and you're done.
 
 ### Connecting manually
 
-In `Settings > AI`, copy the `Endpoint` shown in the `Authenticate` section (for example: `http://127.0.0.1:2402/`).
+In `Settings` → `AI`, open **Use the CLI or connect to other AI Agents** and copy the `Endpoint`
+shown there (for example: `http://127.0.0.1:2402/`).
 
 Sonto MCP listens on localhost (`127.0.0.1`) and uses HTTP transport with OAuth.
-During OAuth you’ll be asked for a time-based pairing code, shown under **Settings → AI → Advanced**.
+During OAuth you’ll be asked for a time-based pairing code, shown on that same **Advanced** page. It
+refreshes every ten minutes, so fetch it when you need it.
 
 <Frame caption="Time-based pairing code">
   <img src="/images/mcp/pairing.png" alt="Time-based pairing code shown in Sonto settings" />
@@ -169,7 +179,8 @@ Click it and enter the pairing code from Sonto (`Settings > AI`).
 
 ## Connected clients
 
-Sonto shows all connected clients in `Settings` > `AI`. You can disconnect a clients to immediately revoke access.
+Sonto lists every connected client on the **Advanced** page in `Settings` → `AI`. Click **Disconnect**
+next to one to revoke its access immediately.
 
 ---
 
