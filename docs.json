@@ -71,6 +71,7 @@
             "pages": ["reference/calendar", "reference/auto-schedule"]
           },
           "reference/ai-with-mcp",
+          "reference/sonto-cli",
           {
             "group": "Capture & integrations",
             "pages": [

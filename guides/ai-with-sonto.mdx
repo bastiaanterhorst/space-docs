@@ -24,28 +24,36 @@ stays the place where you decide what work matters. Watch below, or read the wri
   The MCP server runs on **Mac** only.
 </Info>
 
-## Turn on the MCP server
+## AI Access
 
-Open **Settings → AI** and toggle the **MCP server** on. There are two modes:
+Open **Settings → AI**. **AI Access is on by default**, in read-only mode:
 
 - **Read-only** — your AI can see your data but not change it. The safe default.
-- **Read and write** — the full experience: your AI can create and update tasks and plans. Switch to
-  this when you're ready.
+- **Allow changes** — turn this on for the full experience: your AI can create and update tasks and
+  plans.
 
 ## Connect your AI tool
 
+The quickest path is **Claude Desktop**: in **Settings → AI**, click **Install Claude Desktop
+Connector**. Claude Desktop opens and offers to install it — no pairing code needed.
+
+Working in a terminal or with Claude Code? The native [Sonto CLI](/reference/sonto-cli) gives a coding
+agent access with a single command.
+
+For other MCP tools (OpenAI Codex, Craft Agents), connect manually:
+
 <Steps>
   <Step title="Grab the command for your tool">
-    The [Connect to AI Agents](/reference/ai-with-mcp) reference has a ready-made command for each tool
-    (Claude Code, OpenAI Codex, and others). Copy the one for yours.
+    The [Connect to AI Agents](/reference/ai-with-mcp) reference has a ready-made command for each tool.
+    Copy the one for yours.
   </Step>
   <Step title="Run it and pair">
     Paste the command into your terminal. A browser window opens asking for a **pairing code**. Find the
-    code in **Settings → AI**, just below the endpoint, copy it in, and authorise.
+    code in **Settings → AI → Advanced**, copy it in, and authorise.
   </Step>
   <Step title="Confirm the connection">
-    Back in **Settings → AI**, your tool now shows as a connected client. You can disconnect it any time
-    — that instantly revokes its access — or toggle the server off entirely to stop all connections.
+    Back in **Settings → AI → Advanced**, your tool now shows as a connected client. You can disconnect
+    it any time — that instantly revokes its access — or toggle **AI Access** off to stop all connections.
   </Step>
 </Steps>
 

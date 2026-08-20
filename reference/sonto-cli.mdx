@@ -1,0 +1,85 @@
+---
+title: "Sonto CLI"
+description: "Drive Sonto from the command line and connect coding agents"
+---
+
+Sonto for Mac ships with **`sonto`**, a small command-line tool for reading and editing your tasks,
+plans and projects from a terminal. It's handy on its own, and it's the most efficient way to give a
+coding agent like Claude Code access to Sonto — a CLI call costs far fewer tokens than a full MCP
+tool set.
+
+<Info>
+  The CLI runs on **Mac** only. It needs Sonto running with **AI Access** on (Settings → AI) — which
+  is the default.
+</Info>
+
+## Install
+
+The tool is bundled inside the app. To run it as `sonto` from anywhere, link it onto your `PATH`. Open a terminal and type:
+
+```bash
+ln -s "/Applications/Sonto.app/Contents/MacOS/sonto" /usr/local/bin/sonto
+```
+
+<Tip>
+  The exact path is shown in **Settings → AI → Advanced → CLI**, with a **Copy** button.
+</Tip>
+
+Check the connection:
+
+```bash
+sonto status
+```
+
+## Everyday commands
+
+<CodeGroup>
+```bash Read
+sonto today                    # tasks scheduled for today
+sonto today --date 2026-07-20  # a specific day
+sonto inbox                    # your inbox
+sonto week                     # the current ISO week
+sonto projects                 # your projects
+sonto search "quarterly"       # find tasks by name
+```
+
+```bash Write
+# Writing needs "Allow changes" turned on in Settings → AI.
+sonto add "Buy milk"                 # to the inbox
+sonto add "Draft the deck" --today   # scheduled for today
+sonto add "Review budget" --week     # this week
+sonto add "Kick-off" --project <id>  # into a project
+```
+</CodeGroup>
+
+Every command accepts `--json` for machine-readable output.
+
+## Any tool, by name
+
+`sonto tools` lists every tool the server exposes, and `sonto call` runs any of them directly — handy
+for tools without a dedicated command:
+
+```bash
+sonto tools
+sonto call get_week --args '{"week":30,"year":2026}'
+sonto call add_task --args '{"context_type":"inbox","name":"Buy milk"}'
+```
+
+See [Connect to AI Agents](/reference/ai-with-mcp) for the full list of tools.
+
+## Read vs allow changes
+
+The CLI honours the **Allow changes** toggle in Settings → AI. With it off (the default), read
+commands work and any write is rejected. Turn it on to let `sonto add` and the other write tools
+through.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Connect to AI Agents" icon="robot" href="/reference/ai-with-mcp">
+    Connect Claude Desktop, Claude Code, Codex and others.
+  </Card>
+  <Card title="Using AI with Sonto" icon="sparkles" href="/guides/ai-with-sonto">
+    The guided walkthrough.
+  </Card>
+</CardGroup>

@@ -35,24 +35,24 @@ Some prompts to get you started:
 ---
 
 
-## Enable MCP in Sonto
+## Turn on AI Access
 
-<Info>MCP support is included in the **Mac** version of Sonto.</Info>
+<Info>The MCP server is included in the **Mac** version of Sonto.</Info>
 
-In Sonto:
+**AI Access is on by default**, in **read-only** mode. To check or change it, open `Settings` → `AI`:
 
-1. Open `Settings`.
-2. Go to `AI`.
-3. Turn on `Enable MCP`.
+- **AI Access** — the main switch. When off, no AI tool can reach Sonto. This also disables the `sonto` CLI.
+- **Allow changes** — off by default (read-only). Turn it on to let AI create, edit and complete
+  items. Toggling it restarts the server.
 
-When off, you can configure:
+The `Endpoint`, `Port` (default `2402`) and pairing code live under **Advanced**. You can change the
+port while AI Access is on; the server restarts when you do.
 
-- `Port` (default: `2402`)
-- `Access Mode` (`Read Only` or `Read & Write`)
+### Read-only vs allow changes
 
-### Choose an access mode
+The **Allow changes** toggle decides what your AI tool can do.
 
-#### Read Only
+#### Read-only — Allow changes off
 
 Pick this when you want safe visibility from your AI tool.
 
@@ -60,11 +60,11 @@ Pick this when you want safe visibility from your AI tool.
 - Write tools are not exposed.
 - Any write attempt is rejected.
 
-#### Read & Write
+#### Allow changes on
 
 <Warning>
-  Read &amp; Write lets your AI tool make changes in Sonto — including deleting data.
-  Start with Read Only, and only switch to Read &amp; Write once you trust your tool setup.
+  Allowing changes lets your AI tool make edits in Sonto — including deleting data.
+  Start with read-only, and only turn on **Allow changes** once you trust your tool setup.
 </Warning>
 
 Pick this when you want the AI to actively manage your Sonto data.
@@ -79,31 +79,27 @@ Pick this when you want the AI to actively manage your Sonto data.
 
 ## Connect an AI tool to Sonto
 
-### Tools that support MCPB files (like Claude Desktop)
+<Info>
+  For the manual and CLI setups below, the **pairing code** is under **Settings → AI → Advanced**.
+  Claude Desktop (the first option) doesn't need one.
+</Info>
 
-The easiest way to connect Sonto to your AI tool is using an MCP Bundle (an .mcpb file). This works in Claude Desktop.
+### Claude Desktop (one click)
 
-Open `Settings` and the `AI` tab. Under MCPB, click `Reveal in Finder` and double-click the `Sonto.mcpb` file. 
-In your AI tool you'll enter the pairing code shown in Sonto Settings, and you're done. 
+Open `Settings` → `AI` and click **Install Claude Desktop Connector**. Claude Desktop opens and offers
+to install the connector — accept, and you're done.
 
-<Frame caption="Connecting to Claude Desktop">
-<iframe
-  className="w-full aspect-video rounded-xl"
-  src="https://www.youtube.com/embed/ZsMxKdXnULg"
-  title="YouTube video player"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-  style={{ width: '100%', borderRadius: '0.5rem' }}
-></iframe>
-</Frame>
+<Tip>
+  Prefer the terminal, or using Claude Code? The native [Sonto CLI](/reference/sonto-cli) is a lighter,
+  token-efficient way to give a coding agent access — no connector required.
+</Tip>
 
 ### Connecting manually
 
 In `Settings > AI`, copy the `Endpoint` shown in the `Authenticate` section (for example: `http://127.0.0.1:2402/`).
 
 Sonto MCP listens on localhost (`127.0.0.1`) and uses HTTP transport with OAuth.
-During OAuth you’ll be asked for a time-based pairing code that Sonto shows in the same Settings screen.
+During OAuth you’ll be asked for a time-based pairing code, shown under **Settings → AI → Advanced**.
 
 <Frame caption="Time-based pairing code">
   <img src="/images/mcp/pairing.png" alt="Time-based pairing code shown in Sonto settings" />
