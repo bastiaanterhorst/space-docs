@@ -97,8 +97,11 @@
             "group": "Settings & help",
             "pages": [
               "reference/settings",
+              "reference/accessibility",
+              "reference/languages",
               "reference/notifications",
               "reference/other-topics/keyboard-shortcuts",
+              "reference/system-requirements",
               "reference/troubleshooting",
               "reference/glossary"
             ]

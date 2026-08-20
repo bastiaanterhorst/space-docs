@@ -1,0 +1,125 @@
+---
+title: Accessibility
+description: VoiceOver, text size, and the system settings Sonto respects
+---
+
+Sonto is built to be used however you need to use it — by voice, by keyboard, by switch, or at whatever
+text size suits your eyes. This page covers what's supported and where to turn it on.
+
+Most of it comes from your device's own accessibility settings, which Sonto follows. The one setting
+that lives inside Sonto is **Text size**.
+
+## Text size
+
+Sonto can render everything smaller or larger, independently of your system text size.
+
+<Tabs>
+  <Tab title="Mac">
+    Open `Settings` → `General` and drag the **Text size** slider. There are five steps: **Small**,
+    **Standard**, **Large**, **Extra Large** and **Huge**. Standard is the default.
+
+    The whole interface scales with it, not just the text — rows, spacing and the sidebar grow
+    together, so nothing crowds.
+
+    You can also change it without opening Settings, from the **View** menu: **Zoom In**
+    (<kbd>Cmd</kbd> + <kbd>+</kbd>), **Zoom Out** (<kbd>Cmd</kbd> + <kbd>&minus;</kbd>) and
+    **Actual Size** (<kbd>Cmd</kbd> + <kbd>0</kbd>) to go back to Standard.
+  </Tab>
+  <Tab title="iPhone & iPad">
+    Open `Settings` → `General`. **Use System Text Size** is on by default, so Sonto follows the Dynamic
+    Type size you've set for the whole device.
+
+    Turn it off to pin Sonto to a size of its own, then pick one with the slider — **Small**,
+    **Standard**, **Large**, **Extra Large** or **Huge**. The step marked **Standard** is your system
+    default, so you can always find your way back.
+
+    Leave the toggle **on** if you use one of the accessibility text sizes: those are larger than the
+    in-app slider reaches, and Sonto follows them.
+  </Tab>
+</Tabs>
+
+<Info>
+  Settings and the Backup & Import window deliberately stay at your system text size. Both are fixed-size
+  windows, so they'd have nowhere to grow.
+</Info>
+
+## VoiceOver
+
+Sonto works with VoiceOver on both Mac and iPhone.
+
+A task reads as a single item — its name, state, schedule and tags in one pass, rather than as a
+scattering of separate controls. From there, VoiceOver's actions give you everything the `…` menu
+gives a sighted user:
+
+- Complete the task, or toggle it in progress.
+- Quick-schedule it.
+- **Move Up**, **Move Down**, **Move to Top**, **Move to Bottom** — reordering without dragging.
+- Delete it.
+
+Lists announce themselves by name, so you know whether you're in `Overdue`, a named group, or the main
+task list. Headings are marked up as headers, so you can jump between them with the rotor. Calendar
+events read with their details and can be opened or acted on directly.
+
+Sonto also speaks up when something happens out of view: when a completed task can still be undone,
+when a bulk move, schedule or delete finishes and how many tasks it touched, and when a planning session
+moves to its next step.
+
+<Info>
+  These announcements are separate from Sonto's sound effects — you'll hear them even with sounds
+  turned off in `Settings` → `General`.
+</Info>
+
+## Switch Control and Voice Control
+
+Sonto's core screens name and label their controls, which is what Switch Control and Voice Control need
+to reach them. That includes the ones that are easy to miss: the checkbox, the weekday picker in a
+repeating task, the panel controls on Mac, and the action bar on iPhone.
+
+## System settings Sonto respects
+
+Turn these on in your device's accessibility settings and Sonto follows them:
+
+| Setting | What changes in Sonto |
+| --- | --- |
+| **Reduce Motion** | Rows open without animating, drag springs become near-instant, and pulses and swipe bounces stop. |
+| **Reduce Transparency** | Translucent surfaces become opaque. |
+| **Differentiate Without Colour** | Sonto adds a shape as well as a colour — a glyph on urgent deadlines, on priority checkboxes, and on overdue text — so nothing depends on colour alone. |
+| **Larger Text / Dynamic Type** | Sonto scales with it, unless you've pinned your own size above. |
+| **Large Content Viewer** (iPhone) | Press and hold a control in the action bar to see its name enlarged. |
+
+## Known gaps
+
+Being straight about where the coverage stops:
+
+- **Dragging to reorder isn't reachable with VoiceOver.** The **Move Up** / **Move Down** /
+  **Move to Top** / **Move to Bottom** actions above do the same job, and are the supported route.
+- **Settings and Backup & Import haven't had the same pass** as the main screens.
+- **On Mac, the sidebar's new project and new area buttons appear on hover**, so they can't be reached
+  without a pointer. Use the `File` menu — **New Project** and **New Area** — instead.
+- **Widget rows don't read out tags.**
+
+If something else is in your way, [tell me](mailto:support@sonto.app) — this is the kind of report that
+gets acted on.
+
+## Using Sonto from the keyboard
+
+On Mac you can run Sonto entirely from the keyboard — navigating, editing, scheduling, and reordering.
+See [Keyboard shortcuts](/reference/other-topics/keyboard-shortcuts) for the full list.
+
+## Availability
+
+Accessibility support covers both **Mac** and **iPhone & iPad**. Text size is set inside Sonto on both.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Settings" icon="sliders" href="/reference/settings">
+    Where text size and sound effects live.
+  </Card>
+  <Card title="Keyboard shortcuts" icon="keyboard" href="/reference/other-topics/keyboard-shortcuts">
+    Every action from the keyboard.
+  </Card>
+  <Card title="Languages" icon="language" href="/reference/languages">
+    The languages Sonto speaks.
+  </Card>
+</CardGroup>
