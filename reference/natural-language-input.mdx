@@ -62,6 +62,25 @@ duplicates.
 If you type a tag that doesn't exist yet, choose **Add "…"** from the list and Sonto creates it on the
 spot.
 
+## Priority — `!!!`
+
+Type `!!!` anywhere in the name to mark the task as [priority](/reference/tasks). The marker turns into
+a red pill as you type, and is lifted out of the name when you're done — `Call the bank !!!` becomes
+**Call the bank**, marked priority.
+
+| You type | Result |
+| --- | --- |
+| `Renew insurance !!!` | Named **Renew insurance**, marked priority |
+| `!!! Call the bank` | Named **Call the bank**, marked priority |
+
+It has to be exactly three marks: `!!` and `!!!!` are left alone as ordinary text, so an excitable task
+name keeps its punctuation. Fullwidth `！！！` works too, for Chinese and Japanese keyboards.
+
+<Tip>
+  Delete the pill while you're still editing and the task goes back to whatever it was before — so this
+  never overrides a priority you set with <kbd>Cmd</kbd> + <kbd>T</kbd>.
+</Tip>
+
 ## Dates
 
 Write when a task should happen and Sonto schedules it — either on a specific **day** or across a whole
@@ -129,6 +148,8 @@ A few rules keep things predictable:
   everything would leave the task with no name, Sonto keeps the text instead.)
 - **Plain numbers stay put** — Sonto only treats something as a time when it's sure (`3pm`, `9:30`), so
   `Read chapter 12` keeps its number.
+- **Markers don't overlap** — if `!!!` runs into a date, a duration or a `#`/`@` name, the longer match
+  wins and the marker stays as text.
 - **Change your mind easily** — press <kbd>Backspace</kbd> at the edge of a pill to turn it back into
   ordinary text without deleting it.
 
@@ -138,6 +159,10 @@ Natural language input follows your device's language. Dates and times are under
 Dutch, German, French, Spanish, Portuguese, Japanese, and Chinese**; other languages fall back to
 English. So `koop melk morgen` schedules "buy milk" for tomorrow on a Dutch system, just as
 `buy milk tomorrow` does in English.
+
+That list is one short of the [languages Sonto is translated into](/reference/languages): the app
+speaks Korean, but typed dates aren't read in Korean yet. Projects, tags and `!!!` work everywhere,
+since they match names you've made yourself.
 
 ## Availability
 
