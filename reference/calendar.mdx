@@ -75,6 +75,19 @@ event is marked **private**, so they only see "Busy", rather than the full name 
 Sonto can also place a task for you automatically, finding an opening that respects your working hours
 and existing commitments — see [Auto-schedule](/reference/auto-schedule).
 
+### Deleting a task with an event
+
+[Deleting a task](/reference/tasks#deleting-tasks) takes its time block with it, and
+[undo](/reference/tasks#undo-and-redo) puts the event back. The restored event returns to the same
+calendar at the same time, but it is a new event: a custom alarm you added and the event's location
+don't come back with it.
+
+<Info>
+  A meeting isn't Sonto's to delete. If the task is linked to an event that has other attendees, sits on
+  a read-only or subscribed calendar, or is organised by somebody else, deleting the task only
+  **unlinks** it — the event stays in your calendar and nobody is sent a cancellation.
+</Info>
+
 ## Availability
 
 Calendars work on both **Mac** and **iPhone**. Joining a video call with <kbd>Cmd</kbd> + <kbd>J</kbd>

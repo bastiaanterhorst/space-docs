@@ -100,6 +100,50 @@ You can also paste plain text from another app: Sonto makes one task per line, a
 like `-`, `*` and `1.` as it goes. A line starting `[x]` arrives already completed. Copying the other
 way gives you a Markdown checklist, one `- [ ] Task name` per line.
 
+## Deleting tasks
+
+<Tabs>
+  <Tab title="Mac">
+    Select one or more tasks and press <kbd>Backspace</kbd> or <kbd>Cmd</kbd> + <kbd>Backspace</kbd>,
+    or choose **Delete** from a task's `…` menu.
+  </Tab>
+  <Tab title="iPhone & iPad">
+    Open the task and choose **Delete** from the `…` menu at the bottom of the editor, or pick the task
+    up and drop it on the trash that appears in the action bar.
+  </Tab>
+</Tabs>
+
+Sonto doesn't ask you to confirm — not for a task, and not for a group and everything inside it.
+[Undo](#undo-and-redo) brings it back instead, along with any
+[calendar event](/reference/calendar#deleting-a-task-with-an-event) the task was linked to.
+
+## Undo and redo
+
+Almost anything you do to your tasks can be undone: deleting, cutting and pasting, completing,
+scheduling, moving between lists, reordering, renaming, editing notes, tag changes, creating a project
+or an area — and the changes an [AI assistant](/reference/ai-with-mcp) makes on your behalf.
+
+<Tabs>
+  <Tab title="Mac">
+    <kbd>Cmd</kbd> + <kbd>Z</kbd> undoes and <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> redoes.
+    **Edit** &rarr; **Undo** names the step you're about to reverse — *Undo Delete Task* — so you can
+    see what it will do before you do it.
+  </Tab>
+  <Tab title="iPhone & iPad">
+    Tap the `…` in the action bar and choose **Undo**. It's there only when there's something to undo,
+    with **Redo** beside it once you've undone something.
+  </Tab>
+</Tabs>
+
+Undo is per-device and per-session. It doesn't travel over [sync](/reference/sync), so it only ever
+reverses changes you made on the device you're holding, and the history starts empty each time you open
+Sonto.
+
+<Info>
+  A few less common actions clear the undo history, so **Undo** is occasionally unavailable. That's
+  deliberate: Sonto would rather offer you nothing than undo the wrong thing.
+</Info>
+
 ## Turning a task into a project
 
 Some tasks grow. When one turns out to be a piece of work in its own right, select it and choose
@@ -108,8 +152,8 @@ task's name and notes, and opens it.
 
 <Warning>
   Converting keeps only the **name** and **notes**. The task's tags, schedule, priority and any linked
-  calendar events are discarded, and the task itself is deleted. **There's no undo**, so check before
-  you convert.
+  calendar events are discarded, and the task itself is deleted. If that isn't what you wanted,
+  [undo](#undo-and-redo) puts the task back as it was.
 </Warning>
 
 The option appears only when you have exactly one task selected. A whole group can become a project
