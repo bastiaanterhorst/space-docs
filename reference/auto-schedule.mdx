@@ -8,21 +8,54 @@ respects your working hours and the commitments you already have.
 
 ## Find time on a calendar
 
-Select a task and press <kbd>Cmd</kbd> + <kbd>F</kbd>, or right-click it and choose **Find time on
-calendar**. Sonto looks at your calendar, skips over existing events, stays inside your working hours,
-and creates a time block in the first opening that fits. The event is linked to the task, just like
-dragging a task onto the calendar yourself. The block uses your **default event duration** — 30 minutes
-unless you change it.
+<Tabs>
+  <Tab title="Mac">
+    Select a task and press <kbd>Cmd</kbd> + <kbd>F</kbd>, or right-click it and choose **Find Time on
+    Calendar**. It's also in the **Tasks** menu and in the action bar's `…` menu.
+  </Tab>
+  <Tab title="iPhone & iPad">
+    Open the task and choose **Find Time on Calendar** from the `…` menu at the bottom of the editor. With
+    tasks selected, it's in the action bar's `…` menu. On iPad, it's also in the **Tasks** menu, with
+    <kbd>Cmd</kbd> + <kbd>F</kbd> on a keyboard.
+  </Tab>
+</Tabs>
+
+Sonto looks at your calendar, skips over existing events, stays inside your working hours, and creates a
+time block in the first opening that fits. It starts the block on the quarter hour — 10:15 rather than
+10:07 — whenever the block still fits there. The event is linked to the task, just like dragging a task
+onto the calendar yourself.
 
 <Frame caption="Finding an opening for a task">
   <img src="/images/auto-schedule/find-opening.png" alt="A task being auto-scheduled into a free slot on the calendar" />
 </Frame>
 
+### Which day
+
+- **A task scheduled for today** — Sonto looks for an opening between now and the end of your working
+  hours.
+- **A task scheduled for a later day** — Sonto looks on that day.
+- **An unscheduled task, a task planned for a week, or an overdue task** — Sonto schedules it for today
+  first, then finds time.
+
+A task that already has a time block can't be auto-scheduled again; move its event instead.
+
+### How long
+
+The block uses your **default event duration** — 30 minutes unless you change it. To book half or double
+that, pick the length from the **Find Time on Calendar** menu, or press <kbd>Cmd</kbd> + <kbd>Shift</kbd> +
+<kbd>F</kbd> for half and <kbd>Cmd</kbd> + <kbd>Ctrl</kbd> + <kbd>F</kbd> for double.
+
+### When nothing fits
+
+If no opening is long enough within your working hours, Sonto tells you — **No Free Time Found** — rather
+than booking outside them or on another day. A task it moved to today stays scheduled for today, just
+without a time block.
+
 ## Working hours
 
-Auto-scheduling only places tasks within your **working hours**, so it never books your evenings or
-weekends unless you tell it to. Set your working hours and default event duration in
-**Settings → Calendar**. See [Settings](/reference/settings).
+Auto-scheduling only places tasks within your **working hours**, so it never books your evenings unless
+you tell it to. Set your working hours and default event duration in **Settings → Scheduling**. See
+[Settings](/reference/settings#scheduling).
 
 ## Used by repeating tasks
 
@@ -31,9 +64,8 @@ every time instead of using a fixed time.
 
 ## Availability
 
-<Warning>
-  Auto-scheduling (<kbd>Cmd</kbd> + <kbd>F</kbd>) is a **Mac** feature.
-</Warning>
+Auto-scheduling works on **Mac**, **iPhone** and **iPad**. The keyboard shortcuts need a Mac, or an iPad
+with a keyboard.
 
 ## Related
 

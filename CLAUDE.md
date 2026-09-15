@@ -1,5 +1,5 @@
 # Sonto documentation
-- This repository contains documentation for the Sonto app for Mac and iOS. It uses Mintlify as its documentation system.
+- This repository contains documentation for the Sonto app for Mac, iPhone and iPad. It uses Mintlify as its documentation system.
 
 ## Working relationship
 - You can push back on ideas-this can lead to better documentation. Cite sources and explain your reasoning when you do so
