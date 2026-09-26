@@ -1,0 +1,140 @@
+---
+title: Attachments
+description: Attach files to tasks, projects and areas, and keep them in sync through iCloud
+---
+
+Attach files — a PDF, a photo, a spreadsheet — to a task, project or area, so everything you need is
+right where the work is. Attachments sync to your other devices through iCloud.
+
+## Adding files
+
+Each file can be up to **10 MB**. You can add several at once; any file that's too large is skipped,
+and Sonto tells you which ones it couldn't attach.
+
+<Tabs>
+  <Tab title="Mac">
+    - **Drag and drop** — drop files from Finder onto a task to attach them to it. Drop them on a
+      project's or area's header, or on its row in the sidebar, to attach them to the project or area
+      itself.
+    - **Drop on empty space** — drop files on an empty part of a list (Inbox, Day, Week, a project, an
+      area or a tag) and Sonto creates a new task for each file, named after it, with the file
+      attached.
+    - **Menu** — select a task and choose `Attach File…` from the `Tasks` menu or the task's right-click
+      menu. For a project or area, use `Attach File…` in its `…` menu.
+  </Tab>
+  <Tab title="iPhone & iPad">
+    - **Attach menu** — open a task and tap `…`, then `Attach…`. Choose `Attach from File`,
+      `Attach from Photos` (up to 10 at a time) or `Attach from Camera`. Projects and areas have the same
+      `Attach…` menu.
+    - **Drag and drop** — on iPad, drag files from Files, Photos or Mail onto a task, a project's or
+      area's header, or a sidebar row. Drop them on an empty part of a list to create a new task for each
+      file.
+  </Tab>
+</Tabs>
+
+Adding files can be undone like any other change — see [Undo and redo](/reference/tasks#undo-and-redo).
+
+## Seeing and opening files
+
+A task with files shows a small **paperclip** next to its name. Open the task and you'll find a
+**files** button (for example `2 files`); projects and areas show the same button under their title.
+
+Tap or click it to see the files, each with its size:
+
+- **Mac** — choose a file to open it in its usual app, such as Preview for a PDF.
+- **iPhone & iPad** — tap a file to preview it. Use the share button in the preview to open it in
+  another app.
+
+If a file isn't on this device yet, Sonto downloads it first. You may also see:
+
+- **Not downloaded** — the file is in iCloud and will download when you open it.
+- **Waiting for upload** — the file was added on another device that hasn't finished uploading it yet.
+
+### Editing a file
+
+On Mac, if you edit an attached file in another app — say, you mark up a PDF in Preview — Sonto picks
+up the change when you switch back, and syncs the new version to your other devices.
+
+## Removing files
+
+Open the files button and choose `Remove`, then the file. You can also find `Remove` under the
+attachments submenu of the task's menu. On Mac, `Save a Copy` in the same menu saves a copy of the file
+wherever you like.
+
+Removing a file can be undone. Removed files stay in iCloud for **7 days**, so Undo can still bring
+them back, and are then deleted automatically. Deleting a task, project or area removes its files the
+same way.
+
+## Finding tasks with files
+
+In [Search](/reference/search), open the filter options and turn on `Only Tasks with Attachments`.
+With an empty search, this lists every task that has files.
+
+## Sync and storage
+
+Files sync through your own **private iCloud** account, separately from your tasks — so a large file
+never holds up your task list. Files count towards your iCloud storage.
+
+- **Mac** downloads every file, so they're always available offline.
+- **iPhone & iPad** download every file on Wi-Fi. On mobile data or in Low Data Mode, only files up to
+  2 MB download automatically; larger ones download when you open them.
+
+## Attachment settings
+
+Go to Settings → **Attachments** to see:
+
+- how many files you have and how much iCloud storage they use
+- whether your files are in sync — for example `Uploading 2 files…` or `All files are in iCloud`, and
+  how many aren't on this device yet
+- your largest files, and where each one is attached
+- problems, such as a full iCloud storage
+
+Two buttons help you tidy up:
+
+- **Empty Removed Files** — deletes the files you removed in the last 7 days right away, instead of
+  waiting for the 7 days to pass, along with any other file that no longer belongs to anything. Sonto
+  asks first, because Undo can't bring these files back afterwards.
+- **Delete All Attachments…** — removes every file from all your devices and from iCloud. Your tasks
+  stay. This can't be undone.
+
+## Backups
+
+[Backups](/reference/manage-data) include your files. A backup you make yourself first downloads any
+files that aren't on your Mac yet, so it's complete. Restoring a backup brings the files back and
+uploads them to iCloud again.
+
+## AI and the command line
+
+AI tools connected through [AI Access](/reference/ai-with-mcp) can list, read, add, update, rename and
+remove attachments, and can search for tasks with files. The [Sonto CLI](/reference/sonto-cli) has the
+same through `sonto attachment`:
+
+```bash
+sonto attachment list --task <task-id>
+sonto attachment get <attachment-id> > Contract.pdf
+sonto attachment add --task <task-id> --name Contract.pdf < ~/Downloads/Contract.pdf
+sonto search --has-attachments
+```
+
+## Availability
+
+Attachments work on **Mac**, **iPhone** and **iPad**. Drag and drop from other apps works on Mac and
+iPad; on iPhone, use the `Attach…` menu. Opening a file in its usual app and `Save a Copy` are Mac
+features; on iPhone and iPad, files open in a preview.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Tasks" icon="square-check" href="/reference/tasks">
+    Everything a task can hold.
+  </Card>
+  <Card title="Sync" icon="arrows-rotate" href="/reference/sync">
+    How iCloud keeps your devices in step.
+  </Card>
+  <Card title="Backup & Import" icon="box-archive" href="/reference/manage-data">
+    Back up and restore your data, files included.
+  </Card>
+  <Card title="Search" icon="magnifying-glass" href="/reference/search">
+    Find tasks, including those with files.
+  </Card>
+</CardGroup>
