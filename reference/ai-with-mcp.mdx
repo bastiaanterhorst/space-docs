@@ -13,7 +13,7 @@ description: "Connect your AI tools to Sonto with MCP"
   Get introduced to AI in Sonto.
 </Card>
 
-If you use agentic AI tools like Claude, Codex, or Craft Agents, you can connect them to Sonto.
+If you use agentic AI tools like Claude, ChatGPT, Codex, or Craft Agents, you can connect them to Sonto.
 
 Once connected, your AI tool can **read your Sonto data** (like your inbox, today, and your projects) and — if you allow it — **help you make changes** (like creating tasks or updating plans).
 
@@ -82,7 +82,8 @@ Pick this when you want the AI to actively manage your Sonto data.
 
 <Info>
   For the manual and CLI setups below, the **pairing code** is under **Settings → AI → Use the CLI or
-  connect to other AI Agents → Advanced**. Claude Desktop (the first option) doesn't need one.
+  connect to other AI Agents → Advanced**. Claude Desktop and ChatGPT (the first two options) don't
+  need one.
 </Info>
 
 ### Claude Desktop (one click)
@@ -95,6 +96,37 @@ to install the connector — accept, and you're done. No pairing code, no config
   bundled command-line tool. In 1.7 it could start a second copy of Sonto instead of the tool and hang
   waiting for a reply. If you installed the connector before 2.0, remove it in Claude Desktop and click
   the button again.
+</Info>
+
+### ChatGPT (one click)
+
+<Info>**New in 2.1.1.** Needs the [ChatGPT desktop app](https://chatgpt.com/download) for Mac.</Info>
+
+Open `Settings` → `AI` and click **Install ChatGPT Plugin**:
+
+<Steps>
+  <Step title="Allow the folder (first time only)">
+    A window opens on the `.agents` folder in your home folder — click **Allow**. Sonto adds its
+    plugin there, which is where ChatGPT looks for plugins, so Sonto shows up in ChatGPT's plugin
+    list and stays up to date when Sonto updates.
+  </Step>
+  <Step title="Install the plugin">
+    ChatGPT opens on Sonto's plugin page. Click **Install plugin**.
+  </Step>
+  <Step title="Ask away">
+    In a new chat, type `@Sonto` and ask, for example, “What's on my plate today?”
+  </Step>
+</Steps>
+
+The plugin teaches ChatGPT to use the [Sonto CLI](/reference/sonto-cli), so Sonto has to be running,
+and **Allow changes** decides whether ChatGPT can edit. The first time, ChatGPT asks to run the
+`sontocli` command — allow it (you can allow it for all Sonto commands at once). Your data goes
+straight from Sonto to ChatGPT on your Mac.
+
+<Info>
+  The plugin works in the ChatGPT app on your Mac, not in ChatGPT on the web or your phone. If you
+  click **Cancel** in the folder window, ChatGPT still opens on the plugin page; Sonto then joins
+  ChatGPT's plugin list after your first Sonto question.
 </Info>
 
 <Tip>
