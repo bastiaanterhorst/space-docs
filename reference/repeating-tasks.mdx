@@ -27,10 +27,63 @@ the menu. From there you set how the task should recur.
 
 ## Two ways to repeat
 
-- **On a fixed schedule** — the task reappears on set dates (for example, every Monday, or the first of
-  the month), regardless of whether you finished the previous one.
-- **On completion** — the next occurrence is created only once you complete the current one. This suits
+- **Regularly** — the task reappears on set dates (for example, every Monday, or the first of the
+  month), regardless of whether you finished the previous one.
+- **When Completed** — the next occurrence is created only once you complete the current one. This suits
   tasks where the interval matters from when you *actually* did it, like "water the plants every 5 days".
+
+## Monthly: choose the day
+
+When you repeat a task **Regularly** and set **Repeat** to **Monthly**, an **On** row appears below it.
+It decides where in each month the task lands. You can pick one of two kinds of day:
+
+- **The day of the month** — for example, **the 16th**.
+- **The weekday of the month** — for example, **the third Friday**.
+
+Sonto offers these options based on the day the task is scheduled for. A task on Friday 16 October offers
+**the 16th** and **the third Friday**. If the task isn't scheduled on a day (it's on a week, or not
+scheduled at all), Sonto uses today. If you reschedule the task while the editor is open, the options follow
+the new day and keep the kind you chose.
+
+### Days that not every month has
+
+Some days don't occur in every month. Sonto handles them like this:
+
+| You choose | In a month without that day |
+|---|---|
+| **the 29th** or **the 30th** | The task lands on the last day of the month, such as 28 February. |
+| **the last day** (offered for the 31st) | The task always lands on the month's last day. |
+| **the last Friday** (offered for a fifth weekday) | The task lands on the last Friday, which is the fifth or the fourth Friday. |
+
+When the task's day is the last of its kind, Sonto also offers a **last** option next to the regular one.
+For example, 30 April offers **the 30th** and **the last day**. A Friday that is the fourth and final Friday
+of its month offers **the fourth Friday** and **the last Friday**.
+
+The **On** row appears only for **Monthly**. It's hidden for **When Completed** and for the other
+schedules, including **Custom**.
+
+<Info>
+  A monthly or yearly repetition that starts on a day some months lack stays on that day. A series that
+  starts on 31 January lands on the last day of February and is back on the 31st in March. A yearly
+  repetition from 29 February lands on 28 February in other years.
+</Info>
+
+## Change an existing repetition
+
+Open **Edit Repetition** on any task in the series. Changes that keep the pattern, such as the time or
+length of its calendar events, are saved with **Update Repetition**. When you change the pattern itself, such as the **On**
+day, the button changes to **Re-create Repetition**. Sonto then replaces the open future tasks in the series
+with new ones that follow the new pattern, counting from the day of the task you opened the editor on. That
+task stays where it is. Completed tasks aren't touched.
+
+Monthly repetitions you set up before the **On** row existed keep repeating on their day of the month.
+The row shows that day, so nothing changes until you pick something else.
+
+<Tip>
+  If a monthly series has moved to the 1st of the month, move one of its tasks to the day you want.
+  Then open **Edit Repetition** from that task, choose the day in **On**, and click **Re-create
+  Repetition**.
+</Tip>
 
 ## Add repeating tasks to your calendar
 
