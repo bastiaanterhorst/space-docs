@@ -69,7 +69,11 @@
           },
           {
             "group": "Calendar & scheduling",
-            "pages": ["reference/calendar", "reference/auto-schedule"]
+            "pages": [
+              "reference/calendar",
+              "reference/private-event-notes",
+              "reference/auto-schedule"
+            ]
           },
           "reference/ai-with-mcp",
           "reference/sonto-cli",

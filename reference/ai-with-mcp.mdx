@@ -76,6 +76,22 @@ Pick this when you want the AI to actively manage your Sonto data.
   - Interactive confirmation when the MCP client supports elicitation, or
   - Explicit `confirm_destructive: true` when interactive confirmation is unavailable.
 
+### Private event notes
+
+Your [private event notes](/reference/private-event-notes) are off limits to AI tools until you allow
+them. In `Settings` → `AI`, turn on **Allow AI Tools to Read Private Meeting Notes** (off by default).
+The setting only appears when private notes are available on your Mac.
+
+- With it on, AI tools can read your private notes, for example to prepare an agenda or pick up open
+  items from the last meeting.
+- To let them **write** notes as well, also turn on **Allow changes**.
+- With it off, the note tools are hidden and refused, and the `sonto` CLI can't read notes either.
+
+<Info>
+  Connected AI tools send what they read to their provider. Leave this setting off if your notes should
+  stay in Sonto.
+</Info>
+
 ---
 
 ## Connect an AI tool to Sonto
@@ -224,6 +240,11 @@ next to one to revoke its access immediately.
 - `list_projects`, `list_areas`, `list_groups`
 - `list_long_term_plans`, `get_long_term_plan`
 - `search_todos`
+- `get_event_notes` — the private notes of one event, plus those of the previous occurrence of a
+  repeating meeting (needs **Allow AI Tools to Read Private Meeting Notes**)
+
+With private notes allowed, `get_day_events` also reports which events have private notes, and returns
+their text when called with `include_private_notes`.
 
 ### Write operations
 
@@ -232,6 +253,10 @@ Task operations:
 - `add_task`, `edit_task`, `delete_task`, `sort_tasks`
 - `bulk_edit_tasks`, `bulk_delete_tasks`
 - `schedule_task_event`
+
+Private event notes (needs **Allow AI Tools to Read Private Meeting Notes**):
+
+- `set_event_notes` — replace or append to the private notes of one event
 
 Structure operations:
 
@@ -266,6 +291,8 @@ Prompt families:
 - Planning (actionable plans): `day_plan`, `week_plan`
 - Operational review: `inbox_triage`, `project_review`
 - Long-term planning: `ltp_summary`, `ltp_status_update`, `ltp_next_actions`, `ltp_risks`, `ltp_execution_alignment`, `ltp_plan_assist`
+- Meetings: `meeting_prep` drafts an agenda for your next meeting in its private notes, and asks you before
+  saving it (only while private notes are allowed)
 
 ### Resources
 

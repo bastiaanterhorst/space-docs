@@ -1,0 +1,181 @@
+---
+title: Private Event Notes
+description: Keep your own notes on a calendar event, never shared with attendees or written to the event
+---
+
+Private event notes are your own notes on a calendar event: an agenda, talking points, or what was
+agreed. Sonto keeps them itself. They're **never shared with attendees** and **never written to the
+calendar event**, so other calendar apps and the people you meet with don't see them. They sync through
+your iCloud to your other devices.
+
+Each note belongs to one event. For a repeating meeting, every occurrence has its own note, and Sonto
+shows you what you wrote last time.
+
+## Private notes and the event description
+
+An event can carry two kinds of text, and Sonto keeps them apart:
+
+- **Event description** — the event's own notes, stored in your calendar. Everyone invited sees them.
+  Sonto shows the description as a row in the event's details, labelled **Event description** when it's
+  empty, or with its first line. Tap or click the row to open it, and edit it if the event is yours to
+  change. Wherever you edit it, Sonto reminds you that it's **Visible to all attendees**.
+- **Private event notes** — your notes in Sonto, never in the calendar.
+
+<Warning>
+  Anything you type in the event description goes to everyone invited. Put anything only meant for you in
+  the private notes.
+</Warning>
+
+## Where you find them
+
+Open an event on the [Day or Week screen](/reference/calendar) to see its private notes. The calendar
+itself doesn't mark which events have notes; VoiceOver reads "Has private notes" for those that do.
+
+<Tabs>
+  <Tab title="Mac">
+    Click an event to open its details. The private notes sit at the bottom, under the event information,
+    with **Private event notes** as the placeholder until you start typing.
+
+    For more room, open the event in **focus**:
+
+    - click the **expand** button in the event's details;
+    - right-click the event and choose **Focus**;
+    - or hover over the event and press <kbd>Cmd</kbd> + <kbd>.</kbd>.
+  </Tab>
+  <Tab title="iPhone & iPad">
+    Tap an event to open its details. Your notes are in the **Private notes** section.
+
+    For more room, tap the **expand** button to open the event in **focus**.
+  </Tab>
+</Tabs>
+
+Sonto saves your notes as you type. To remove a note, clear its text.
+
+## Event focus
+
+Event focus works like [Focus](/reference/focus) for a task: the event fills the screen, with your
+private notes as the main text.
+
+- **Title** — the event's name, which you can edit when the event is yours to change.
+- **Time** — a pill with the event's time and length, such as "11:00 1h", with the day in front when it
+  isn't today, or **All day**. Its colour shows where the event stands: green while it's on, orange once
+  it ended today, red when it ended earlier. Click or tap it to open the event editor and change the time,
+  calendar or other details. While the meeting is running, focus shows **Event Happening Now** and how
+  much time is left.
+- **Join** — joins the video call, when the event has one.
+- **Attendees** — the people invited and their responses.
+- **Event description** — opens the shared description, marked **Visible to all attendees**.
+- **Add Checklist** (Mac) — starts a checklist in your notes. On iPhone and iPad it's in the keyboard
+  toolbar.
+- **Event Options** (the **…** button) — the same actions as the event's menu, such as **Create Task for
+  Event**.
+
+Click or tap below your notes to continue typing at the end.
+
+## Repeating meetings
+
+Each occurrence of a repeating meeting has its own note, so this week's notes don't overwrite last
+week's.
+
+### Last time
+
+At the bottom of focus, the **Last time** panel shows the notes from the previous occurrence that has
+notes, with its date. It opens collapsed; click or tap it to read them. If there's no earlier note, it
+reads **No earlier notes**.
+
+If the previous notes have unchecked checklist items, **Carry over N open items** copies them into
+today's notes under "Carried over from" and the date. Items already in today's notes aren't copied again.
+**Undo Carry Over** takes them out again, as long as you haven't changed the notes since.
+
+### Jump between occurrences
+
+The **…** button next to **Last time** lists the occurrences of the series by date:
+
+- **Upcoming Events** — a submenu with upcoming occurrences that have private notes. Further dates are
+  under **Later Dates**, grouped by year.
+- Below it, the most recent past occurrences with notes. Older ones are under **Older Dates**, grouped
+  by year.
+
+The occurrence you're looking at has a check mark. Choose a date to show that occurrence's notes in the
+same focus view. **Last time**, the time pill and **Event Options** then act on that occurrence.
+
+To return to the occurrence you opened, click or tap the **back** button next to the time pill, or
+choose **Back to** and the date at the top of the menu. Closing focus always takes you straight back to
+where you came from.
+
+An occurrence that's no longer on your calendar still shows its notes, marked **Event no longer on the
+calendar**, but you can't edit them there.
+
+## Turn an event into a task
+
+**Create Task for Event** turns an event into a task linked to it (see [Calendar](/reference/calendar)).
+If the occurrence has private notes, they move into the task's notes, and the event no longer keeps a
+separate private note. Sonto says so next to **Create Task for Event**: in the task, your notes can be
+read by Spotlight, Siri and connected AI tools.
+
+## Which calendars support private notes
+
+Private notes work on calendars you can edit that sync over CalDAV, such as **iCloud**, **Google** and
+other CalDAV accounts. They aren't available for:
+
+- **Microsoft Exchange** calendars — Sonto shows "Private notes aren't available for Exchange
+  calendars." instead;
+- calendars on your device only, subscribed calendars, birthdays, and calendars you can only read, such as
+  a holidays calendar.
+
+On those calendars, the event shows its description as before, without private notes.
+
+## Sync and backups
+
+Private notes sync through your iCloud to your other devices. They need Sonto's **new sync system**.
+If a device still uses the previous one (you chose **Not now** when Sonto offered to switch sync), Sonto
+doesn't show private notes there at all.
+
+If you edit the same note on two devices at once, the last change to sync wins.
+
+[Backups](/reference/manage-data) include your private notes. When you restore, choose **Private Meeting
+Notes** to bring them back.
+
+## Notes without an event
+
+When an event is deleted, moved to another account, or changed outside Sonto, its private notes are
+kept. Sonto never deletes or moves them for you. You can still find them with
+[search](/reference/search), and they open in focus.
+
+To review them, open **Settings → Scheduling** and choose **Find Private Notes Without an Event…**. For
+each note you can **Delete** it, or attach it to an event with the same title on that day.
+
+## Search
+
+With **Search in Notes** on, [search](/reference/search) also looks through your private notes and event
+titles. Matches appear in a **Meeting Notes** section below your tasks; choose one to open it in focus.
+
+## AI tools
+
+On Mac, connected AI tools can read and write your private notes, but only when you turn on **Allow AI
+Tools to Read Private Meeting Notes** in **Settings → AI**. It's off by default. Writing notes also needs
+**Allow changes**. See [Connect to AI Agents](/reference/ai-with-mcp#private-event-notes).
+
+## Availability
+
+Private event notes work on **Mac**, **iPhone** and **iPad**, on supported calendars, with the new sync
+system. Opening focus from the event's menu or with <kbd>Cmd</kbd> + <kbd>.</kbd> is Mac only; on iPhone
+and iPad, use the expand button in the event's details. AI access to notes is Mac only, like the MCP
+server.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Calendar" icon="calendar" href="/reference/calendar">
+    How events and time blocks work in Sonto.
+  </Card>
+  <Card title="Focus" icon="expand" href="/reference/focus">
+    Full-screen focus for tasks and events.
+  </Card>
+  <Card title="Backup & Import" icon="database" href="/reference/manage-data">
+    Back up and restore your data, notes included.
+  </Card>
+  <Card title="Search" icon="magnifying-glass" href="/reference/search">
+    Find tasks and meeting notes.
+  </Card>
+</CardGroup>

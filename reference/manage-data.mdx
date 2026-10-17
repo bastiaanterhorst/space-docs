@@ -11,7 +11,7 @@ The window has four tabs — **Backup**, **Restore**, **Import**, and **Delete A
 
 ## Back up your data
 
-A backup is a single file that contains a complete, portable copy of your Sonto data — your areas, projects, tasks, tags, repeating tasks, your planning, and your [attached files](/reference/attachments). It does **not** include app settings or your calendar connections, which are specific to each device.
+A backup is a single file that contains a complete, portable copy of your Sonto data — your areas, projects, tasks, tags, repeating tasks, your planning, your [private event notes](/reference/private-event-notes), and your [attached files](/reference/attachments). It does **not** include app settings or your calendar connections, which are specific to each device.
 
 <Info>Your backups stay on your Mac, in a folder that only Sonto can write to. Nothing is uploaded anywhere — it's your data, on your machine.</Info>
 
@@ -60,6 +60,8 @@ You can pick any combination of:
 - **Loose Tasks** — tasks that aren't in any project or area
 - **Planning Notes** — notes from your weekly and daily planning
 - **Repeating Tasks** — your recurring task definitions
+- **Private Meeting Notes** — your [private event notes](/reference/private-event-notes), all at once. Off
+  by default, and only offered when the backup contains notes and this device uses the new sync system.
 
 <Frame caption="Choose exactly what to restore">
   <img src="/images/manage-data/restore-picker.png" alt="The Choose What to Restore sheet with checkboxes for areas, projects, loose tasks, planning notes, and repeating tasks" />
@@ -68,6 +70,8 @@ You can pick any combination of:
 A couple of things worth knowing:
 
 - Tags with the same name are merged, so restoring won't leave you with duplicate tags.
+- Private notes for an event that already has notes are added to the notes that are there. Text that's
+  already in them isn't added twice, so restoring the same backup again changes nothing.
 - If you restore **Repeating Tasks**, Sonto recreates the series and picks up generating future tasks again. If you leave them out, any repeating tasks in the backup come back as ordinary one-off tasks instead.
 
 Click `Restore` and your selection is added to Sonto.
